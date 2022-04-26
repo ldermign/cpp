@@ -5,44 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/14 15:14:38 by ldermign          #+#    #+#              #
-#    Updated: 2022/04/14 15:26:14 by ldermign         ###   ########.fr        #
+#    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
+#    Updated: 2022/04/26 11:18:48 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	minishell
-
-INCS	=	
+NAME	=	megaphone
 
 SRCS	=	megaphone.cpp
 
-OBJS	=	${SRCS:.c=.o}
-
-DEPS	=	${SRCS:.c=.d}
+OBJS	=	${SRCS:.cpp=.o}
 
 CC		=	c++
 
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+ 
 RM		=	rm -rf
-
-CFLAGS	=	-Wall -Wextra -Werror #-I ${INCS} #-std=c++98 <-- doit pouvoir compiler avec ca
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			@${CC} -o ${NAME} ${OBJS}  ${CFLAGS} 
+			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
--include	${DEPS}
-
-%.o:%.c
-			@${CC} ${CFLAGS} -o $@ -c $<
-			@${CC} ${CFLAGS} -MMD -MP -MF ${@:.o=.d} -o $@ -c $<
+.cpp.o:
+			${CC} ${CFLAGS} -c $< -o ${<:cpp=o}
 
 clean:
-			@${RM} ${OBJS} ${DEPS}
+			${RM} ${OBJS}
 
 fclean:		clean
-			@${RM} ${NAME}
+			${RM} ${NAME}
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: 	all clean fclean re
