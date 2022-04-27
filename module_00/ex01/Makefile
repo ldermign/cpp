@@ -6,15 +6,15 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 11:24:16 by ldermign          #+#    #+#              #
-#    Updated: 2022/04/26 15:37:29 by ldermign         ###   ########.fr        #
+#    Updated: 2022/04/27 11:03:53 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	phonebook
 
-SRCS	=	main.cpp Contact.cpp #PhoneBook.cpp 
+SRCS	=	main.cpp Contact.cpp PhoneBook.cpp 
 
-INCS	=	Contact.hpp #PhoneBook.hpp
+INCS	=	Contact.hpp PhoneBook.hpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
