@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:23:55 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/27 11:16:02 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:30:39 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define CONTACT_HPP
 
 class Contact {
-
+	
 public:
 
 	std::string	first_name; //verifier si bien char * ou char[] ou std::char ou std::string
 	std::string	last_name;
 	std::string	nickname;
 
-	void	init_info(void);
+	// void	init_info();
 
 // private:
 	// int		*phone_number;

@@ -6,7 +6,7 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 11:24:16 by ldermign          #+#    #+#              #
-#    Updated: 2022/04/27 11:03:53 by ldermign         ###   ########.fr        #
+#    Updated: 2022/04/27 15:44:54 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS	=	${SRCS:.cpp=.o}
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -g3 -std=c++98
  
 RM		=	rm -rf
 
