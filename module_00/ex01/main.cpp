@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:21:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/28 15:24:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/04/28 15:35:43 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,19 +128,19 @@ void	print_welcome_message(void) {
 	std::cout << "You can now enter a command." << std::endl;
 }
 
-// void	search_user(PhoneBook *all_contacts) {
+void	search_user(PhoneBook *all_contacts) {
+(void)all_contacts;
+	// Contact		new_contact;
 
-// 	// Contact		new_contact;
-
-// 	// if (all_contacts->full == 8 && all_contacts->it_contact == 8)
-// 	// 	all_contacts->it_contact = 0;
-// 	// if (all_contacts->full == 8)
-// 	// 	erase_if_full(&(all_contacts->repertory[all_contacts->it_contact]));
-// 	// init_info(all_contacts);
-// 	// all_contacts->it_contact++;
-// 	// if (all_contacts->full != 8)
-// 	// 	all_contacts->full++;
-// }
+	// if (all_contacts->full == 8 && all_contacts->it_contact == 8)
+	// 	all_contacts->it_contact = 0;
+	// if (all_contacts->full == 8)
+	// 	erase_if_full(&(all_contacts->repertory[all_contacts->it_contact]));
+	// init_info(all_contacts);
+	// all_contacts->it_contact++;
+	// if (all_contacts->full != 8)
+	// 	all_contacts->full++;
+}
 
 int	main()
 {
@@ -164,7 +164,7 @@ int	main()
 		else if (cmd_user == "SEARCH")
 		{
 			print_phonebook(all_contacts);
-			// search_user(&all_contacts);
+			search_user(&all_contacts);
 		}
 	}
 
