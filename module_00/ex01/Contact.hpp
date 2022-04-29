@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:23:55 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/27 20:26:49 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/04/29 10:02:34 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,6 @@ public:
 	std::string	last_name;
 	std::string	nickname;
 	std::string	phone_number;
-
-	// void	init_info();
-
-// private:
 	std::string	darkest_secret;
 
 	Contact(void);

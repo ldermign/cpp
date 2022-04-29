@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:21:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/28 15:35:43 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/04/29 10:25:19 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,20 +126,32 @@ void	print_welcome_message(void) {
 	std::cout << "\033[38;5;160mEXIT\033[0m make you quit your PhoneBook. All data will be erased." << std::endl;
 	std::cout << "All others commands will be ignored." << std::endl;
 	std::cout << "You can now enter a command." << std::endl;
+	std::cout << std::endl;
 }
 
-void	search_user(PhoneBook *all_contacts) {
-(void)all_contacts;
-	// Contact		new_contact;
+void	search_user(PhoneBook all) {
 
-	// if (all_contacts->full == 8 && all_contacts->it_contact == 8)
-	// 	all_contacts->it_contact = 0;
-	// if (all_contacts->full == 8)
-	// 	erase_if_full(&(all_contacts->repertory[all_contacts->it_contact]));
-	// init_info(all_contacts);
-	// all_contacts->it_contact++;
-	// if (all_contacts->full != 8)
-	// 	all_contacts->full++;
+	std::string	str = "";
+	int	index = 0;
+
+	std::cout << "Which contact do you want to see ? -> ";
+	while (str == "")
+	{
+		std::getline (std::cin, str);
+		if (str != "" && is_digit(str) == -1)
+		{
+			std::cout << "It goes from 0 to 7. Only numbers." << std::endl;
+			str = "";
+		}
+	}
+	index = (int)str[0] - 48;
+	std::cout << std::endl;
+	std::cout << "First name -> " << all.repertory[index].first_name << std::endl;
+	std::cout << "Last name -> " << all.repertory[index].last_name << std::endl;
+	std::cout << "Nickname -> " << all.repertory[index].nickname << std::endl;
+	std::cout << "Phone number-> " << all.repertory[index].phone_number << std::endl;
+	std::cout << "Darkest secret-> " << all.repertory[index].darkest_secret << std::endl;
+	std::cout << std::endl;
 }
 
 int	main()
@@ -155,7 +167,6 @@ int	main()
 	while (42)
 	{
 		print_welcome_message();
-		// print_phonebook(all_contacts);
 		std::getline (std::cin, cmd_user);
 		if (cmd_user == "EXIT")
 			exit(0);
@@ -164,7 +175,7 @@ int	main()
 		else if (cmd_user == "SEARCH")
 		{
 			print_phonebook(all_contacts);
-			search_user(&all_contacts);
+			search_user(all_contacts);
 		}
 	}
 
