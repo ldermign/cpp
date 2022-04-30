@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:23:55 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/29 11:52:32 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/04/30 13:23:57 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class Contact {
 	
 public:
 
-	std::string	first_name; //verifier si bien char * ou char[] ou std::char ou std::string
+	std::string	first_name;
 	std::string	last_name;
 	std::string	nickname;
 	std::string	phone_number;

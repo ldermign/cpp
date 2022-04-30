@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:21:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/29 11:52:27 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/04/30 13:24:10 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-using namespace std;
 
 std::string	truncate(std::string to_truncate) {
 
