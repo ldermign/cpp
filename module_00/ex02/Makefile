@@ -6,11 +6,11 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 11:24:16 by ldermign          #+#    #+#              #
-#    Updated: 2022/04/29 12:59:34 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/01 10:32:36 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	phonebook
+NAME	=	account
 
 SRCS	=	Account.cpp tests.cpp
 
