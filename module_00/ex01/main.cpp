@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:21:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/30 13:24:10 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/01 18:30:41 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include <stdlib.h>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+
+int	PhoneBook::_index = 0;
+int PhoneBook::_full = 0;
+
+int	PhoneBook::getIndex( void ) {
+
+	return PhoneBook::_index;
+}
+
+int	PhoneBook::getFull( void ) {
+
+	return PhoneBook::_full;
+}
 
 std::string	truncate(std::string to_truncate) {
 
@@ -41,15 +54,15 @@ std::string	truncate(std::string to_truncate) {
 
 void	print_phonebook(PhoneBook all) {
 
-	int	max = all.full;
+	int	max = PhoneBook::getFull();
 	std::cout << "\033[2J\033[1;1H";
 	std::cout << std::endl;
 	std::cout << "------------------PhoneBook------------------" << std::endl;
 	std::cout << "|          |          |          |          |" << std::endl;
-	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
+	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  _nickname|" << std::endl;
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	for (int i = 0 ; i < max ; i++)
-		std::cout << "|" << "         " << i << "|" << truncate(all.repertory[i].first_name) << "|" << truncate(all.repertory[i].last_name) << "|" << truncate(all.repertory[i].nickname) << "|" << std::endl;
+		std::cout << "|" << "         " << i << "|" << truncate(all.repertory[i]._firstName) << "|" << truncate(all.repertory[i]._lastName) << "|" << truncate(all.repertory[i]._nickname) << "|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << std::endl;
 }
@@ -70,55 +83,55 @@ int	is_digit(std::string str) {
 int	init_info(PhoneBook *all) {
 
 	std::cout << "You are going to add a new contact to your PhoneBook. What's his first name ?" << std::endl;
-	while (all->repertory[all->it_contact].first_name == "")
+	while (all->repertory[all->it_contact]._firstName == "")
 	{
 		if (std::cin.eof())
 			return -1;
-		std::getline (std::cin, all->repertory[all->it_contact].first_name);
+		std::getline (std::cin, all->repertory[all->it_contact]._firstName);
 	}
 	std::cout << "You can now enter his last name :" << std::endl;
-	while (all->repertory[all->it_contact].last_name == "")
+	while (all->repertory[all->it_contact]._lastName == "")
 	{
 		if (std::cin.eof())
 			return -1;
-		std::getline (std::cin, all->repertory[all->it_contact].last_name);
+		std::getline (std::cin, all->repertory[all->it_contact]._lastName);
 	}
-	std::cout << "What's his nickname ?" << std::endl;
-	while (all->repertory[all->it_contact].nickname == "")
+	std::cout << "What's his _nickname ?" << std::endl;
+	while (all->repertory[all->it_contact]._nickname == "")
 	{
 		if (std::cin.eof())
 			return -1;
-		std::getline (std::cin, all->repertory[all->it_contact].nickname);
+		std::getline (std::cin, all->repertory[all->it_contact]._nickname);
 	}
 	std::cout << "Now, put his phone number." << std::endl;
-	while (all->repertory[all->it_contact].phone_number == "")
+	while (all->repertory[all->it_contact]._phoneNumber == "")
 	{
-		std::getline (std::cin, all->repertory[all->it_contact].phone_number);
+		std::getline (std::cin, all->repertory[all->it_contact]._phoneNumber);
 		if (std::cin.eof())
 			return -1;
-		if (all->repertory[all->it_contact].phone_number != "" && is_digit(all->repertory[all->it_contact].phone_number) == -1)
+		if (all->repertory[all->it_contact]._phoneNumber != "" && is_digit(all->repertory[all->it_contact]._phoneNumber) == -1)
 		{
 			std::cout << "Error. Only digit in a phone number." << std::endl;
-			all->repertory[all->it_contact].phone_number = "";
+			all->repertory[all->it_contact]._phoneNumber = "";
 		}
 	}
 	std::cout << "Finaly, what's his darkest secret ?" << std::endl;
-	while (all->repertory[all->it_contact].darkest_secret == "")
+	while (all->repertory[all->it_contact]._darkestSecret == "")
 	{
 		if (std::cin.eof())
 			return -1;
-		std::getline (std::cin, all->repertory[all->it_contact].darkest_secret);
+		std::getline (std::cin, all->repertory[all->it_contact]._darkestSecret);
 	}
 	return 0;
 }
 
 void	erase_if_full(Contact *to_erase) {
 
-	to_erase->first_name = "";
-	to_erase->last_name = "";
-	to_erase->nickname = "";
-	to_erase->phone_number = "";
-	to_erase->darkest_secret = "";
+	to_erase->_firstName = "";
+	to_erase->_lastName = "";
+	to_erase->_nickname = "";
+	to_erase->_phoneNumber = "";
+	to_erase->_darkestSecret = "";
 }
 
 int	add_user(PhoneBook *all_contacts) {
@@ -154,7 +167,7 @@ int	search_user(PhoneBook all) {
 	std::string	str = "";
 	int	index = 0;
 
-	if (all.repertory[0].first_name == "")
+	if (all.repertory[0]._firstName == "")
 	{
 		std::cout << "There isn't any contact in your repertory. Please add one before searching." << std::endl;
 		return (1);
@@ -178,11 +191,11 @@ int	search_user(PhoneBook all) {
 		return (1);
 	}
 	std::cout << std::endl;
-	std::cout << "First name -> " << all.repertory[index].first_name << std::endl;
-	std::cout << "Last name -> " << all.repertory[index].last_name << std::endl;
-	std::cout << "Nickname -> " << all.repertory[index].nickname << std::endl;
-	std::cout << "Phone number-> " << all.repertory[index].phone_number << std::endl;
-	std::cout << "Darkest secret-> " << all.repertory[index].darkest_secret << std::endl;
+	std::cout << "First name -> " << all.repertory[index]._firstName << std::endl;
+	std::cout << "Last name -> " << all.repertory[index]._lastName << std::endl;
+	std::cout << "_nickname -> " << all.repertory[index]._nickname << std::endl;
+	std::cout << "Phone number-> " << all.repertory[index]._phoneNumber << std::endl;
+	std::cout << "Darkest secret-> " << all.repertory[index]._darkestSecret << std::endl;
 	std::cout << std::endl;
 	return 1;
 }
@@ -195,8 +208,6 @@ int	main()
 	std::cout << "\033[2J\033[1;1H";
 	std::cout << "~~~ Welcome to your PhoneBook ~~~" << std::endl;
 	std::cout << std::endl << "Here, you can add any contact of your choice with a few information." << std::endl;
-	all_contacts.it_contact = 0;
-	all_contacts.full = 0;
 	while (42)
 	{
 		print_welcome_message();

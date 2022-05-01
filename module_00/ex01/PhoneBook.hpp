@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:29:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/04/29 10:02:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/01 18:30:41 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,18 @@ class PhoneBook {
 
 public:
 
-	int it_contact;
-	int	full;
+	static int	getIndex( void );
+	static int	getFull( void );
+
 	Contact	repertory[8];
 
 	PhoneBook(void);
 	~PhoneBook(void);
+
+private:
+
+	static int	_index;
+	static int	_full;
 
 };
 
