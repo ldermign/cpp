@@ -6,12 +6,13 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 13:01:29 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/01 11:23:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/01 15:47:07 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 #include "Account.hpp"
 
 int	Account::_nbAccounts = 0;
