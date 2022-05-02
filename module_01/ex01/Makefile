@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/26 11:24:16 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/02 14:01:28 by ldermign         ###   ########.fr        #
+#    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
+#    Updated: 2022/04/26 11:18:48 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	account
+NAME	=	megaphone
 
-SRCS	=	Account.cpp tests.cpp
+SRCS	=	megaphone.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 

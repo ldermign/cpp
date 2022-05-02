@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:29:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/01 18:30:41 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/02 13:40:06 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ public:
 
 	static int	getIndex( void );
 	static int	getFull( void );
+
+	void	printPhoneBook( void );
+	int	searchUser( void );
+	int	addUser( void );
 
 	Contact	repertory[8];
 
