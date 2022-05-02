@@ -6,7 +6,15 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:04:10 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/02 14:04:12 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/02 15:16:03 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include <stdlib.h>
+#include "Zombie.hpp"
+
+int	main() {
+
+	return EXIT_SUCCESS;
+}

@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:29:07 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/02 13:50:57 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/02 15:16:37 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	PhoneBook::printPhoneBook( void ) {
 	std::cout << std::endl;
 	std::cout << "------------------PhoneBook------------------" << std::endl;
 	std::cout << "|          |          |          |          |" << std::endl;
-	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  _nickname|" << std::endl;
+	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  nickname|" << std::endl;
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	for (int i = 0 ; i < max ; i++)
 		std::cout << "|" << "         " << i

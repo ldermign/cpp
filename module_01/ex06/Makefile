@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/04/26 11:18:48 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/02 14:03:48 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	
 
-SRCS	=	megaphone.cpp
+SRCS	=	
 
 OBJS	=	${SRCS:.cpp=.o}
 
