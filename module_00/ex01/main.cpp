@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:21:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/02 13:49:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:29:59 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main()
 		if (std::cin.eof())
 			return 1;
 		if (cmd_user == "EXIT")
-			exit(0);
+			return 0;
 		else if (cmd_user == "ADD")
 		{
 			if (all_contacts.addUser() == -1)
