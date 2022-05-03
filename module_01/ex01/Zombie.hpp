@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 16:40:12 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/03 17:05:30 by ldermign         ###   ########.fr       */
+/*   Created: 2022/05/03 17:21:26 by ldermign          #+#    #+#             */
+/*   Updated: 2022/05/03 17:23:24 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdlib.h>
-#include "Zombie.hpp"
 
-Zombie*	newZombie( std::string name ) {
+class Zombie {
 
-	Zombie	*ZombieAlloc = new Zombie(name);
+public:
 
-	return ZombieAlloc;
-}
+	Zombie( void );
+	~Zombie( void );
+
+};
