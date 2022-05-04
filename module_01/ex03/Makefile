@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/02 14:03:51 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/04 15:59:03 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	
+NAME	=	war
 
-SRCS	=	
+SRCS	=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
