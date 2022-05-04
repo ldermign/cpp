@@ -6,7 +6,7 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/03 17:23:38 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/04 13:33:14 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,6 @@ clean:
 fclean:		clean
 			${RM} ${NAME}
 
-re:			fclean all
+re:			fclean all     
 
 .PHONY: 	all clean fclean re
