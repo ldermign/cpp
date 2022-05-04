@@ -6,12 +6,11 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 16:40:15 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/03 17:12:20 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:25:50 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdlib.h>
 
 class	Zombie {
 
@@ -22,12 +21,9 @@ public:
 
 	std::string getName( void );
 
-	void	announce( void ); // verifier si privee ou public
+	void	announce( void );
 	Zombie*	newZombie( std::string name );
-	//	It creates a zombie, name it, and return it so you can use it
-	//	outside of the function scope.
 	void	randomChump( std::string name );
-	//	It creates a zombie, name it, and the zombie announces itself.
 
 
 private:

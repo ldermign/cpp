@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:04:10 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/03 17:17:39 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:25:52 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,19 @@
 
 int	main() {
 
-	Zombie *Zombie1 = new Zombie("Alloc");
-	Zombie Zombie2 = Zombie("NoAlloc");
+	Zombie *ptr;
 
-	delete Zombie1;
+	Zombie yes = Zombie("Alloc BIG Class");
+	Zombie no = Zombie("NoAlloc BIG Class");
+	yes.announce();
+	no.announce();
 
-	return EXIT_SUCCESS;
+	ptr = yes.newZombie("Alloc Inside");
+	ptr->announce();
+
+	no.randomChump("NoAlloc Inside");
+
+	delete ptr;
+
+	return 0;
 }
