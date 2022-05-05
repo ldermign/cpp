@@ -6,9 +6,12 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:56:34 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/04 18:08:43 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/05 13:50:33 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 #include <iostream>
 
@@ -23,14 +26,16 @@ class Weapon {
 
 public:
 
-	str::string const	&getType( std::string name_weapon );
-	void				setType( str::string const &newType );
+	std::string const	&getType( void );
+	void				setType( std::string newType );
 
-	Weapon( void );
+	Weapon( std::string name_weapon );
 	~Weapon( void );
 
 private:
 
 	std::string	_type;
 
-}
+};
+
+#endif

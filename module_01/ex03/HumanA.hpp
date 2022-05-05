@@ -6,11 +6,15 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:57:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/04 17:20:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:31:58 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
 #include <iostream>
+#include "Weapon.hpp"
 
 /*
 Now, create two classes: HumanA and HumanB. They both have a Weapon and a
@@ -25,15 +29,16 @@ class	HumanA {
 	
 public:
 
-	void	attack();
-	void	setWeapon( Weapon *ptr );
+	void	attack( void );
 
-	HumanA( std::string name, Weapon *ptr );
+	HumanA( std::string name, Weapon &ptr );
 	~HumanA( void );
 
 private:
 
 	std::string	_name;
-	std::string	_weapon;
+	Weapon		&_ptr_weapon;
 
 };
+
+#endif

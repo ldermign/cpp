@@ -6,20 +6,31 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:58:07 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/04 18:10:49 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:52:48 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "HumanB.hpp"
 
-void	HumanB::HumanB( std::string name, Weapon *ptr ) : _name(name), _weapon(ptr) {
+HumanB::HumanB( std::string name ) : _name(name) {
+	
+}
+
+HumanB::~HumanB( void ) {
 	
 }
 
 void	HumanB::attack( void ) {
 
+	std::string		weapon = HumanB::_ptr_weapon->getType();
+
 	if (weapon == "")
-		weapon = "bare hands"
-	
-	std::cout << this->getType() << " attacks with their " << weapon;
+		weapon = "bare hands";
+	std::cout << HumanB::_name << " attacks with their " << weapon << std::endl;
+}
+
+void	HumanB::setWeapon( Weapon &ref ) {
+
+	HumanB::_ptr_weapon = &ref;
 }

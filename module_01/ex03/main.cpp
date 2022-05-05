@@ -6,11 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:55:51 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/04 17:23:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:54:26 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 /*
 If your implementation is correct, executing the following code will print an attack
@@ -35,6 +38,14 @@ int	main() {
 		club.setType("some other type of club");
 		jim.attack();
 	}
+	{
+		Weapon club = Weapon("");
+		HumanB ted("Ted");
+		ted.setWeapon(club);
+		ted.attack();
+		club.setType("");
+		ted.attack();
+	}
 
 	return 0;
 }
@@ -48,5 +59,4 @@ starting this exercise.
 /*
 Reference to weapon = pour HumanA car forcement weapon ?
 Pointeur to weapon = pour HumanB car peut etre nul
-
 */
