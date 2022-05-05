@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/02 14:03:50 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/05 15:00:48 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	
+NAME	=	sed
 
-SRCS	=	
+SRCS	=	main.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
