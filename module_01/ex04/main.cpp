@@ -6,11 +6,12 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:57:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/05 15:01:05 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/06 10:37:42 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
 // std::string::replace INTERDIT
 
 /*
@@ -25,13 +26,22 @@ Of course, handle unexpected inputs and errors. You have to create and turn in y
 own tests to ensure your program works as expected.
 */
 
+int	change_string(std::string file, std::string s1, std::string s2) {
+
+	std::ifstream ifs;
+	if (ifs.open(file, ios::in))
+
+	return EXIT_SUCCESS;
+}
+
 int main(int ac, char **av) {
-(void)av;
+
 	if (ac != 4)
 	{
 		std::cout << "Error, wrong commands." << '\n';
 		return 1;
 	}
-
+	else if (change_string(av[1], av[2], av[3]) == EXIT_FAILURE)
+		return EXIT_FAILURE;
 	return 0;
 }
