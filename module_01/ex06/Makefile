@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/02 14:03:48 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/08 00:15:34 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	
+NAME	=	harlFilter
 
-SRCS	=	
+SRCS	=	main.cpp Harl.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
