@@ -6,34 +6,44 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 21:33:36 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/08 16:40:59 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/08 17:25:11 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Harl.hpp"
 
-int	Harl::complain( std::string level ) {
+void	Harl::complain( std::string level ) {
 
 	const t_msgs	which[] = {
-		{"DEBUG", 0, &Harl::debug}, {"INFO", 1, &Harl::info}, 
-		{"WARNING", 2, &Harl::warning}, {"ERROR", 3, &Harl::error},
-		{"NULL", -1, NULL}
+		{"DEBUG", &Harl::debug}, {"INFO", &Harl::info}, 
+		{"WARNING", &Harl::warning}, {"ERROR", &Harl::error},
+		{"NULL", NULL}
 	};
 	int	level_complain = 0;
-	while (which[level_complain].complain != level)
+	while (level_complain < 5 && which[level_complain].complain != level)
 		level_complain++;
-	int	i = 0;
-	while (which[i].complain != "NULL") {
-		switch (i) {
-			case 0: (this->*(which[i].f))();
-			case 1: (this->*(which[i].f))();
-			case 2: (this->*(which[i].f))();
-			case 3: (this->*(which[i].f))();
-			default:
-				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		}
-		i++;
+	switch (level_complain) {
+		case 0:
+			(this->*(which[0].f))();
+			break ;
+		case 1:
+			(this->*(which[0].f))();
+			(this->*(which[1].f))();
+			break ;
+		case 2:
+			(this->*(which[0].f))();
+			(this->*(which[1].f))();
+			(this->*(which[2].f))();
+			break ;
+		case 3:
+			(this->*(which[0].f))();
+			(this->*(which[1].f))();
+			(this->*(which[2].f))();
+			(this->*(which[3].f))();
+			break ;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
 
