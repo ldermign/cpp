@@ -6,33 +6,35 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 21:33:36 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/08 00:22:26 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/08 16:40:59 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Harl.hpp"
 
-void	Harl::complain( std::string level ) {
+int	Harl::complain( std::string level ) {
 
 	const t_msgs	which[] = {
-		{"DEBUG", &Harl::debug}, {"INFO", &Harl::info}, 
-		{"WARNING", &Harl::warning}, {"ERROR", &Harl::error},
-		{"NULL", NULL}
+		{"DEBUG", 0, &Harl::debug}, {"INFO", 1, &Harl::info}, 
+		{"WARNING", 2, &Harl::warning}, {"ERROR", 3, &Harl::error},
+		{"NULL", -1, NULL}
 	};
-	int	ret = 0;
+	int	level_complain = 0;
+	while (which[level_complain].complain != level)
+		level_complain++;
 	int	i = 0;
 	while (which[i].complain != "NULL") {
-		if (level == which[i].complain) {
-			(this->*(which[i].f))();
-			ret = 1;
-			break ;
+		switch (i) {
+			case 0: (this->*(which[i].f))();
+			case 1: (this->*(which[i].f))();
+			case 2: (this->*(which[i].f))();
+			case 3: (this->*(which[i].f))();
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		}
 		i++;
 	}
-	if (ret != 1)
-		std::cout << "Wrong argument." << std::endl;
-
 }
 
 void	Harl::debug( void ) {
