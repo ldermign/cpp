@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 16:40:20 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/04 11:26:40 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:49:13 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 Zombie::Zombie( std::string name ) : _name(name) {
 
-	return ;
 }
 
 Zombie::~Zombie( void ) {

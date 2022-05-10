@@ -6,11 +6,11 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/08 17:31:13 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/10 11:53:06 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	
+NAME	=	a.out
 
 SRCS	=	main.cpp Fixed.cpp
 
