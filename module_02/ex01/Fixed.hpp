@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:32:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/10 14:22:51 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/11 10:38:42 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 private:
 
 	int					_whole;
-	static const int	_wholeConst;
+	static const int	_bits;
 
 };
 

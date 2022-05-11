@@ -6,14 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:58 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/10 15:32:40 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/11 10:51:46 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-const int Fixed::_wholeConst = 8;
+const int Fixed::_bits = 8;
 
 int		Fixed::getRawBits( void ) const {
 
@@ -46,53 +46,34 @@ Fixed::Fixed( Fixed const & src ) {
 	return ;
 }
 
-// qui convertit la valeur en virgule fixe en nombre entier.
 int Fixed::toInt( void ) const {
 
 	int		fixed_to_int;
-	// int	fixed_to_int = (int)getRawBits();
 
-	// return fixed_to_int;
+	fixed_to_int = this->_whole >> this->_bits;	//	\ 256
+
+	return fixed_to_int;
 }
 
-// qui convertit la valeur en virgule fixe en nombre à virgule flottante.
 float Fixed::toFloat( void ) const {
 
 	float	fixed_to_float;
+
+	fixed_to_float = (float)(this->_whole) / (float)(1 << this->_bits);	//	\ 256
 	
-	fixed_to_float = (float)getRawBits();
-	
-	return 0;
+	return fixed_to_float;
 }
 
-/*
-• Un constructeur prenant un flottant constant en paramètre et qui convertit
-celui-ci en virgule fixe. Le nombre de bits de la partie fractionnaire est initialisé à
-8 comme dans l’exercice 00.
-*/
-Fixed::Fixed( float const nbr_float ) {
-(void)nbr_float;
+Fixed::Fixed( float const nbr_float ) : _whole(roundf(nbr_float * 256)) {
 
 	std::cout << "Float constructor called" << std::endl;
-
-	// float	chaiPa;
-
-
-	// this->_whole =  
 
 	return ;
 }
 
-/*
-• Un constructeur prenant un entier constant en paramètre et qui convertit celui-ci
-en virgule fixe. Le nombre de bits de la partie fractionnaire est initialisé à 8
-comme dans l’exercice 00.
-*/
-Fixed::Fixed( int const nbr_int ) {
-(void)nbr_int;
-	std::cout << "Int constructor called" << std::endl;
+Fixed::Fixed( int const nbr_int ) : _whole(nbr_int * 256) {
 
-	// this->_whole = nbr_int * 256;
+	std::cout << "Int constructor called" << std::endl;
 
 	return ;
 }
@@ -113,7 +94,7 @@ Fixed::~Fixed( void ) {
 
 std::ostream & operator<<( std::ostream & o, Fixed const & i ) {
 
-	o << i.getRawBits();
+	o << i.toFloat();
 
 	return o;
 }
