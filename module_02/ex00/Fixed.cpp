@@ -6,14 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:58 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/10 13:54:28 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/11 10:38:42 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Fixed.hpp"
 
-const int Fixed::_wholeConst = 8;
+const int Fixed::_bits = 8;
 
 int		Fixed::getRawBits( void ) const {
 
