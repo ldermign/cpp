@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:32:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/12 14:58:56 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/13 14:44:44 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,19 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoi
 		std::cout << "A new soldier has been created. He has no name " << std::endl;
 		this->_name = "Anonymus";
 	}
+	std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
+
+	return ;
+}
+
+ClapTrap::ClapTrap( std::string name, int hp, int ep, int ad ) : _name(name), _hitPoints(hp), _energyPoints(ep), _attackDamage(ad) {
+
+	if (name != "")
+		std::cout << "A new soldier has been created. His name is " << name << std::endl;
+	else {
+		std::cout << "A new soldier has been created. He has no name " << std::endl;
+		this->_name = "Anonymus";
+	}
 
 	return ;
 }
@@ -70,7 +83,8 @@ void	ClapTrap::attack( const std::string &target ) {
 void	ClapTrap::takeDamage( unsigned int amount ) {
 
 	if (this->_hitPoints == 0) {
-		std::cout << "\033[38;5;160m" << this->_name << " is already dead\033[0m" << std::endl;
+		std::cout << RED << this->_name << " is already dead" << NORM << std::endl;
+		std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
 		return ;
 	}
 
@@ -81,15 +95,19 @@ void	ClapTrap::takeDamage( unsigned int amount ) {
 	std::cout << this->_name << " lost " << amount << " of hit point. He's down to " << this->_hitPoints << " hit points" << std::endl;
 	
 	if (this->_hitPoints == 0) {
-		std::cout << "\033[38;5;160m" << this->_name << " is now dead\033[0m" << std::endl;
+		std::cout << RED << this->_name << " is now dead" << NORM << std::endl;
+		std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
 		return ;
 	}
+
+	std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
+
 }
 
 void	ClapTrap::beRepaired( unsigned int amount ) {
 
 	if (this->_energyPoints == 0) {
-		std::cout << "\033[38;5;214mNot enough energy point for " << this->_name << "\033[0m" << std::endl;
+		std::cout << YELL << "Not enough energy point for " << this->_name << NORM << std::endl;
 		return ;
 	}
 
