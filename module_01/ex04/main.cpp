@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:57:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/16 15:46:11 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:23:13 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,31 @@
 #include <fstream>
 #include <stdlib.h>
 
-void	replace_strings(std::ofstream &new_file, std::string string_file, std::string s1, std::string s2) { // fichier - ligne - a remplacer - remplacement  
+void	replace_strings(std::ofstream &new_file, std::string string_file, std::string s1, std::string s2) {
 
 	std::string	new_string = string_file;
-	int			len_str = new_string.length();
+	int			len_new_str = new_string.length();
+	int			j = 0;
+	int			i = 0;
 
-	for (int i = 0; i < len_str ; i++) {
-		if (new_string.substr(i, s1.length()) == s1) {
-			new_string = new_string.substr(0, i);
-			new_string += s2 + &string_file[i + s1.length()];
-			std::cout << "[" << &new_string[i + s1.length()] << "] for i = " << i << std::endl;
-			// i += s2.length();
-			std::cout << i << std::endl;
+	while (i < len_new_str) {
+		if (string_file.substr(j, s1.length()) == s1) {
+			new_string = new_string.substr(0, i) + s2;
+			i = new_string.length();
+			new_string += &string_file[j + s1.length()];
+			j += s1.length();
+			len_new_str = new_string.length();
 		}
-		len_str = new_string.length();
+		else {
+			j++;
+			i++;
+		}
 	}
 	new_file << new_string;
 }
 
 int	change_string(const char *file, std::string s1, std::string s2) {
-(void)s2;
+
 	std::ifstream	ifs;
 	std::ofstream	new_file;
 	std::string		string_file;
