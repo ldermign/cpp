@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:32:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/13 14:44:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:42:54 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ ClapTrap::ClapTrap( void ) : _name(""), _hitPoints(10), _energyPoints(10), _atta
 ClapTrap &ClapTrap::operator=( ClapTrap const & rhs ) {
 
 	if ( this != &rhs ) {
-		this->_name = rhs._name;
-		this->_hitPoints = rhs._hitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamage = rhs._attackDamage;
+		_name = rhs._name;
+		_hitPoints = rhs._hitPoints;
+		_energyPoints = rhs._energyPoints;
+		_attackDamage = rhs._attackDamage;
 	}
 	
 	return *this;
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap( ClapTrap const & src ) {
 
 ClapTrap::~ClapTrap( void ) {
 
-	std::cout << "The ClapTrap soldier " << this->_name << " has been erased. Goodbye" << std::endl;
+	std::cout << "The ClapTrap soldier " << _name << " has been erased. Goodbye" << std::endl;
 
 	return ;
 }
@@ -47,12 +47,12 @@ ClapTrap::~ClapTrap( void ) {
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 
 	if (name != "")
-		std::cout << "A new soldier has been created. His name is " << name << std::endl;
+		std::cout << "A new ClapTrap soldier has been created. His name is " << name << std::endl;
 	else {
-		std::cout << "A new soldier has been created. He has no name " << std::endl;
-		this->_name = "Anonymus";
+		std::cout << "A new ClapTrap soldier has been created. He has no name " << std::endl;
+		_name = "Anonymus";
 	}
-	std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
+	std::cout << GREY << _name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
 
 	return ;
 }
@@ -60,10 +60,10 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10), _energyPoi
 ClapTrap::ClapTrap( std::string name, int hp, int ep, int ad ) : _name(name), _hitPoints(hp), _energyPoints(ep), _attackDamage(ad) {
 
 	if (name != "")
-		std::cout << "A new soldier has been created. His name is " << name << std::endl;
+		std::cout << "A new ClapTrap soldier has been created. His name is " << name << std::endl;
 	else {
-		std::cout << "A new soldier has been created. He has no name " << std::endl;
-		this->_name = "Anonymus";
+		std::cout << "A new ClapTrap soldier has been created. He has no name " << std::endl;
+		_name = "Anonymus";
 	}
 
 	return ;
@@ -71,50 +71,50 @@ ClapTrap::ClapTrap( std::string name, int hp, int ep, int ad ) : _name(name), _h
 
 void	ClapTrap::attack( const std::string &target ) {
 
-	if (this->_energyPoints == 0) {
-		std::cout << "Not enough energy point for " << this->_name << std::endl;
+	if (_energyPoints == 0) {
+		std::cout << "Not enough energy point for " << _name << std::endl;
 		return ;
 	}
-	this->_energyPoints--;
+	_energyPoints--;
 	
-	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage( unsigned int amount ) {
 
-	if (this->_hitPoints == 0) {
-		std::cout << RED << this->_name << " is already dead" << NORM << std::endl;
-		std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
+	if (_hitPoints == 0) {
+		std::cout << RED << _name << " is already dead" << NORM << std::endl;
+		std::cout << GREY << _name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
 		return ;
 	}
 
-	this->_hitPoints -= amount;
-	if (this->_hitPoints < 0)
-		this->_hitPoints = 0;
+	_hitPoints -= amount;
+	if (_hitPoints < 0)
+		_hitPoints = 0;
 
-	std::cout << this->_name << " lost " << amount << " of hit point. He's down to " << this->_hitPoints << " hit points" << std::endl;
+	std::cout << _name << " lost " << amount << " of hit point. He's down to " << _hitPoints << " hit points" << std::endl;
 	
-	if (this->_hitPoints == 0) {
-		std::cout << RED << this->_name << " is now dead" << NORM << std::endl;
-		std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
+	if (_hitPoints == 0) {
+		std::cout << RED << _name << " is now dead" << NORM << std::endl;
+		std::cout << GREY << _name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
 		return ;
 	}
 
-	std::cout << GREY << this->_name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
+	std::cout << GREY << _name << " --> [" << _hitPoints << "]hp - [" << _energyPoints << "]ep - [" << _attackDamage <<  "]ad" << NORM << std::endl;
 
 }
 
 void	ClapTrap::beRepaired( unsigned int amount ) {
 
-	if (this->_energyPoints == 0) {
-		std::cout << YELL << "Not enough energy point for " << this->_name << NORM << std::endl;
+	if (_energyPoints == 0) {
+		std::cout << YELL << "Not enough energy point for " << _name << NORM << std::endl;
 		return ;
 	}
 
-	this->_energyPoints--;	
-	this->_hitPoints += amount;
+	_energyPoints--;	
+	_hitPoints += amount;
 
-	std::cout << this->_name << " repaired himself with " << amount
-		<< " points. He's now at " << this->_hitPoints << " hit points" << std::endl;
+	std::cout << _name << " repaired himself with " << amount
+		<< " points. He's now at " << _hitPoints << " hit points" << std::endl;
 	
 }
