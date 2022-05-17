@@ -6,14 +6,32 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:32 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 09:24:33 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 11:10:58 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int	main( void ) {
 
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	
+	delete meta;
+	delete j;
+	delete i;
+	
 	return 0;
 }
 
@@ -31,23 +49,9 @@ le type de Dog sera “Dog”, et celui de Cat sera “Cat”. Le type de la cla
 Chaque animal doit être capable d’utiliser la fonction membre :
 makeSound()
 Elle affichera un son cohérent (les chats n’aboient pas).
-5
-C++ - Module 04 Polymorphisme par sous-typage, classes abstraites, interfaces
 Exécuter ce code devrait afficher les sons propres aux classes Dog et Cat, pas celui de
 la classe Animal.
-int main()
-{
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-...
-return 0;
-}
+CF MAIN
 Afin de vous assurer d’avoir compris, implémentez une classe WrongCat héritant
 d’une classe WrongAnimal. Dans le code ci-dessus, si vous remplacez l’Animal et le
 Cat par le WrongAnimal et le WrongCat, le WrongCat devrait afficher le son du WrongAnimal.

@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 09:26:06 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 09:33:26 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 11:10:29 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 Animal::Animal( void ) {
 
+	std::cout << "There is a new Animal in this place" << std::endl;
 	return ;
 }
 
 Animal & Animal::operator=( Animal const & rhs ) {
+	
+	if (&rhs != this) {}
 	
 	return *this;
 }
@@ -32,5 +35,15 @@ Animal::Animal( Animal const & src ) {
 
 Animal::~Animal( void ) {
 
+	std::cout << "One less Animal" << std::endl;
+	return ;
+}
+
+std::string	Animal::getType( void ) {
+
+	return type;
+}
+
+void	Animal::makeSound( void ) {
 	
 }

@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 09:24:54 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 11:10:19 by ldermign         ###   ########.fr       */
+/*   Created: 2022/05/17 11:00:57 by ldermign          #+#    #+#             */
+/*   Updated: 2022/05/17 12:55:16 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include <iostream>
+#include "Dog.hpp"
 
-class Animal {
+Dog::Dog( void ){// : type("Dog") {
 
-public:
+	std::cout << "One more Dog !" << std::endl;
+	return ;
+}
 
-	void	makeSound( void );
+Dog & Dog::operator=( Dog const & rhs ) {
+	
+	if (&rhs != this) {}
+	
+	return *this;
+}
 
-	std::string	getType( void );
+Dog::Dog( Dog const & src ) {
+	
+	*this = src;
 
-	Animal( void );								//	Constructeur par défaut
-	Animal	&operator=( Animal const & rhs );	//	Opérateur d’affectation
-	Animal( Animal const & src );				//	Constructeur de recopie
-	~Animal( void );							//	Destructeur
+	return ;
+}
 
-protected:
+Dog::~Dog( void ) {
 
-	std::string	type;
-
-};
-
-#endif
+	std::cout << "One of the Dogs is gone" << std::endl;
+	return ;
+}

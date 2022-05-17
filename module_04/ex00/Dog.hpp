@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 09:24:54 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 11:10:19 by ldermign         ###   ########.fr       */
+/*   Created: 2022/05/17 11:01:31 by ldermign          #+#    #+#             */
+/*   Updated: 2022/05/17 11:01:59 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class Animal {
+#include "Animal.hpp"
+
+class Dog : public Animal {
 
 public:
 
-	void	makeSound( void );
-
-	std::string	getType( void );
-
-	Animal( void );								//	Constructeur par défaut
-	Animal	&operator=( Animal const & rhs );	//	Opérateur d’affectation
-	Animal( Animal const & src );				//	Constructeur de recopie
-	~Animal( void );							//	Destructeur
-
-protected:
-
-	std::string	type;
+	Dog( void );						//	Constructeur par défaut
+	Dog	&operator=( Dog const & rhs );	//	Opérateur d’affectation
+	Dog( Dog const & src );				//	Constructeur de recopie
+	~Dog( void );						//	Destructeur
 
 };
 
