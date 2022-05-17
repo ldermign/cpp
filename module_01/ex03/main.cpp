@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:55:51 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/05 14:54:26 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 09:51:32 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-
-/*
-If your implementation is correct, executing the following code will print an attack
-with "crude spiked club" then a second attack with "some other type of club" for both
-test cases:
-*/
 
 int	main() {
 
@@ -49,14 +43,3 @@ int	main() {
 
 	return 0;
 }
-
-/*
-In which case do you think it would be best to use a pointer to
-Weapon? And a reference to Weapon? Why? Think about it before
-starting this exercise.
-*/
-
-/*
-Reference to weapon = pour HumanA car forcement weapon ?
-Pointeur to weapon = pour HumanB car peut etre nul
-*/

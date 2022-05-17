@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 21:33:36 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/08 17:25:11 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:10:29 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,15 @@ void	Harl::complain( std::string level ) {
 	switch (level_complain) {
 		case 0:
 			(this->*(which[0].f))();
-			break ;
 		case 1:
-			(this->*(which[0].f))();
 			(this->*(which[1].f))();
-			break ;
 		case 2:
-			(this->*(which[0].f))();
-			(this->*(which[1].f))();
 			(this->*(which[2].f))();
-			break ;
 		case 3:
-			(this->*(which[0].f))();
-			(this->*(which[1].f))();
-			(this->*(which[2].f))();
 			(this->*(which[3].f))();
-			break ;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
+	if (level_complain > 3 || level_complain < 0)
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
 void	Harl::debug( void ) {

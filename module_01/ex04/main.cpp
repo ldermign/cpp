@@ -6,13 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:57:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/16 21:23:13 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 10:06:34 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <cstring>
 
 void	replace_strings(std::ofstream &new_file, std::string string_file, std::string s1, std::string s2) {
 
@@ -42,13 +43,16 @@ int	change_string(const char *file, std::string s1, std::string s2) {
 	std::ifstream	ifs;
 	std::ofstream	new_file;
 	std::string		string_file;
+	std::string		file_str = file;
 
 	ifs.open (file, std::ifstream::in);
 	if (ifs.fail()) {
 		std::cout << file << ": No such file or directory" << std::endl;
 		return EXIT_FAILURE;
 	}
-	new_file.open ("NEW_ONE_TMP", std::ofstream::out | std::ios::ate);
+	std::string tmp = file_str + ".replace";
+	const char *to_write = tmp.c_str();
+	new_file.open (to_write, std::ofstream::out | std::ios::ate);
 	if (new_file.fail()) {
 		std::cout << "Error: can't create new file" << std::endl;
 		return EXIT_FAILURE;
@@ -74,8 +78,9 @@ int main(int ac, char **av) {
 		std::cout << "Error, wrong commands." << '\n';
 		return 1;
 	}
+	else if (std::strlen(av[1]) == 0)
+		return EXIT_FAILURE;
 	else if (change_string(av[1], av[2], av[3]) == EXIT_FAILURE)
 		return EXIT_FAILURE;
-	rename("NEW_ONE_TMP", av[1]);
 	return 0;
 }

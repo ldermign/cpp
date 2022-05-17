@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:56:11 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/05 14:03:48 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 09:50:32 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ std::string const	&Weapon::getType( void ) {
 
 void	Weapon::setType( std::string name_weapon ) {
 
-	Weapon::_type = name_weapon;
+	_type = name_weapon;
 }
