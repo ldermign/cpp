@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:59:33 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 11:01:05 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:55:31 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,9 @@ Cat::~Cat( void ) {
 
 	std::cout << "One of the Cats is gone" << std::endl;
 	return ;
+}
+
+void	Cat::makeSound( void ) const {
+	
+	std::cout << "Miaou." << std::endl;
 }

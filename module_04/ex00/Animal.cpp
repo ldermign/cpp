@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 09:26:06 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 11:10:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:54:34 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ Animal::~Animal( void ) {
 	return ;
 }
 
-std::string	Animal::getType( void ) {
+std::string	Animal::getType( void ) const {
 
-	return type;
+	return this->type;
 }
 
-void	Animal::makeSound( void ) {
+void	Animal::makeSound( void ) const {
 	
+	std::cout << "An Animal is ready to make a sound..." << std::endl;
 }
