@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:58 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/11 15:24:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:50:22 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int Fixed::toInt( void ) const {
 
 	int		fixed_to_int;
 
-	fixed_to_int = this->_whole >> this->_bits;	//	\ 256
+	fixed_to_int = this->_whole >> this->_bits;
 
 	return fixed_to_int;
 }
@@ -47,7 +47,7 @@ float Fixed::toFloat( void ) const {
 
 	float	fixed_to_float;
 
-	fixed_to_float = (float)(this->_whole) / (float)(1 << this->_bits);	//	\ 256
+	fixed_to_float = (float)(this->_whole) / (float)(1 << this->_bits);
 	
 	return fixed_to_float;
 }
@@ -130,13 +130,7 @@ Fixed Fixed::operator/( Fixed const & rhs ) {
 	return ( Fixed (this->toFloat() / rhs.toFloat()) );
 }
 
-/*
-Post-increment and post-decrement creates a copy of the object,
-increments or decrements the value of the object and returns the copy
-from before the increment or decrement.
-*/
-
-Fixed Fixed::operator++( int nbr ) {	//	post-incrementation
+Fixed Fixed::operator++( int nbr ) {
 (void)nbr;
 
 	Fixed	copy = *this;
@@ -145,14 +139,14 @@ Fixed Fixed::operator++( int nbr ) {	//	post-incrementation
 	return copy;
 }
 
-Fixed &Fixed::operator++( void ) {		//	pre-incrementation
+Fixed &Fixed::operator++( void ) {
 
 	this->_whole++;	
 
 	return *this;
 }
 
-Fixed Fixed::operator--( int nbr ) {	//	post-decrementation
+Fixed Fixed::operator--( int nbr ) {
 (void)nbr;
 
 	Fixed	copy = *this;
@@ -161,7 +155,7 @@ Fixed Fixed::operator--( int nbr ) {	//	post-decrementation
 	return copy;
 }
 
-Fixed &Fixed::operator--( void ) {		//	pre-decrementation
+Fixed &Fixed::operator--( void ) {
 
 	this->_whole--;
 
