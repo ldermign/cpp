@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:32 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 13:42:25 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:29:08 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main( void ) {
 Pour chaque exercice, veuillez fournir les tests les plus complets possible.
 Les constructeurs et les destructeurs de chaque classe doivent afficher des messages qui
 leur sont propres. N’utilisez pas le même message pour toutes les classes.
-Commencez par implémenter une classe simple de base Animal. Elle possède un attribut protégé :
-• std::string type;
+Commencez par implémenter une classe simple de base Animal. Elle possède un attribut 
+protégé : • std::string type;
 Implémentez une classe Dog (chien) qui hérite de Animal.
 Implémentez une classe Cat (chat) qui hérite de Animal.
 Ces deux classes dérivées doivent initialiser leur type en fonction de leur nom. Ainsi,

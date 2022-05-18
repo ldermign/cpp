@@ -6,22 +6,29 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 09:26:06 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 13:54:34 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/18 15:26:04 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Animal.hpp"
 
-Animal::Animal( void ) {
+Animal::Animal( void ) : type("Animal") {
 
 	std::cout << "There is a new Animal in this place" << std::endl;
 	return ;
 }
 
+Animal::Animal( std::string newType ) {
+
+	this->type = newType;
+}
+
 Animal & Animal::operator=( Animal const & rhs ) {
 	
-	if (&rhs != this) {}
+	if (&rhs != this) {
+		this->type = getType();
+	}
 	
 	return *this;
 }

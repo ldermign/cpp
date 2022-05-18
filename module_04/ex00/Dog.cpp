@@ -6,22 +6,24 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:00:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/17 13:55:03 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/18 15:37:48 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Dog.hpp"
 
-Dog::Dog( void ) {
+Dog::Dog( void ) : Animal("Dog") {
 
 	std::cout << "One more Dog !" << std::endl;
 	return ;
 }
 
 Dog & Dog::operator=( Dog const & rhs ) {
-	
-	if (&rhs != this) {}
+
+	if (&rhs != this) {
+		this->type = rhs.getType();
+	}
 	
 	return *this;
 }
@@ -42,4 +44,9 @@ Dog::~Dog( void ) {
 void	Dog::makeSound( void ) const {
 	
 	std::cout << "Ouaf ouaf !" << std::endl;
+}
+
+Dog::Dog( std::string newType ) {
+
+	type = newType;
 }
