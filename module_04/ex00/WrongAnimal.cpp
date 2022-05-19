@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 09:26:06 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 10:10:47 by ldermign         ###   ########.fr       */
+/*   Created: 2022/05/19 10:14:14 by ldermign          #+#    #+#             */
+/*   Updated: 2022/05/19 10:28:45 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-void	Animal::makeSound( void ) const {
+void	WrongAnimal::makeSound( void ) const {
 	
-	std::cout << "An Animal is ready to make a sound..." << std::endl;
+	std::cout << "WrongAnimal here : someone's ready to be loud..." << std::endl;
 }
 
-std::string	Animal::getType( void ) const {
+std::string	WrongAnimal::getType( void ) const {
 
 	return this->type;
 }
 
-Animal::Animal( std::string newType ) {
+WrongAnimal::WrongAnimal( std::string newType ) {
 
 	this->type = newType;
 }

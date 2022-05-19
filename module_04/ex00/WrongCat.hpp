@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 10:58:16 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 10:07:47 by ldermign         ###   ########.fr       */
+/*   Created: 2022/05/19 10:19:39 by ldermign          #+#    #+#             */
+/*   Updated: 2022/05/19 10:22:39 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal {
+class WrongCat : public WrongAnimal {
 
 public:
 
-	virtual void	makeSound( void ) const;
-	Cat( std::string newType );
+	void	makeSound( void ) const;
+	WrongCat( std::string newType );
 
 // Canonical form
 
-	Cat( void ) : Animal("Cat") {
-		std::cout << "One more Cat !" << std::endl;
+	WrongCat( void ) : WrongAnimal("WrongCat") {
+		std::cout << "One more WrongCat !" << std::endl;
 	};
-	Cat	&operator=( Cat const & rhs ) {
+	WrongCat	&operator=( WrongCat const & rhs ) {
 		if (&rhs != this)
 			type = rhs.getType();
 		return *this;
 	};
-	Cat( Cat const & src ) {
+	WrongCat( WrongCat const & src ) {
 		*this = src;
 	};
-	virtual ~Cat( void ) {
-		std::cout << "One of the Cats is gone" << std::endl;
+	virtual ~WrongCat( void ) {
+		std::cout << "One of the WrongCats is gone" << std::endl;
 	};
 
 };
