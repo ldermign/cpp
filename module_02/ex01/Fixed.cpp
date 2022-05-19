@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:58 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/11 10:51:46 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:47:59 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int Fixed::toInt( void ) const {
 
 	int		fixed_to_int;
 
-	fixed_to_int = this->_whole >> this->_bits;	//	\ 256
+	fixed_to_int = this->_whole >> this->_bits;
 
 	return fixed_to_int;
 }
@@ -59,7 +59,7 @@ float Fixed::toFloat( void ) const {
 
 	float	fixed_to_float;
 
-	fixed_to_float = (float)(this->_whole) / (float)(1 << this->_bits);	//	\ 256
+	fixed_to_float = (float)(this->_whole) / (float)(1 << this->_bits);
 	
 	return fixed_to_float;
 }
