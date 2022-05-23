@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:52:42 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/23 14:19:00 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:19:53 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	main( void ) {
 		std::cerr << e.what() << '\n';
 	}
 	try {
-		std::cout << no;			//	75
+		std::cout << no;
 		no.incrementGrade(0);
 	}
 	catch (const std::exception &e) {
