@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/20 14:14:31 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/23 11:35:13 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	
+NAME	=	a.out
 
-SRCS	=	main.cpp Bureaucrat.{h, hpp}, Bureaucrat.cpp
+SRCS	=	main.cpp Bureaucrat.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 

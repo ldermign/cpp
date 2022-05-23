@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:14:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/22 14:39:27 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:08:32 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,43 @@ class Bureaucrat {
 
 public:
 
+	Bureaucrat( std::string, int);
+
 	std::string			getName( void ) const;
 	int					getGrade( void ) const;
 
-	void				IncrementGrade( void );
-	void				DecrementGrade( void );
+	void				incrementGrade( int addGrade );
+	void				decrementGrade( int delGrade );
 
+
+	class Exception : std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("is too low");
+		};	// ; ou pas, ca fonctionne ???
+	};
+
+	class GradeTooHighException : public std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("\033[38;5;124mGrade too high !\033[0m\n");
+		}	
+	};
+	
+	class GradeTooLowException : public std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("\033[38;5;124mGrade too low !\033[0m\n");
+		}	
+	};
+	
 // CANONICAL FORM
 
 	Bureaucrat( void );
 	Bureaucrat &operator=( Bureaucrat const &rhs );
 	Bureaucrat( Bureaucrat const &src );
 	~Bureaucrat( void );
+
 
 private:
 
@@ -39,19 +64,7 @@ private:
 
 };
 
+
 std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs );
 
 #endif
-
-/*
-Toute tentative d’instancier un Bureaucrat en utilisant un échelon invalide jettera une
-exception :
-Bureaucrat::GradeTooHighException ou Bureaucrat::GradeTooLowException.
-
-Vous ajouterez des accesseurs pour chacun de ces attributs : getName() et getGrade().
-Implémentez aussi deux fonctions membres afin d’incrémenter ou de décrémenter
-l’échelon du bureaucrate. Si ce dernier est trop haut ou trop bas,
-les mêmes exceptions que dans le constructeur seront jetées.
-Rappelez-vous. Puisque l’échelon 1 est le plus élevé, et 150 le plus
-bas, incrémenter un échelon 3 donnera l’échelon 2 au bureaucrate.
-*/
