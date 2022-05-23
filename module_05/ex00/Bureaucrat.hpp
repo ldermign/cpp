@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:14:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/23 14:08:32 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:17:18 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ public:
 	public:
 		virtual const char	*what( void ) const throw() {
 			return ("\033[38;5;124mGrade too low !\033[0m\n");
+		}	
+	};
+
+	class GradeError : public std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("\033[38;5;124mGrade is invalid !\033[0m\n");
 		}	
 	};
 	
