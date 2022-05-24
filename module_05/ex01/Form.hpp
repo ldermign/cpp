@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:10:41 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/23 14:34:48 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:53:15 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,27 @@
 # define FORM_HPP
 
 #include <iostream>
+#include "Bureaucrat.hpp"
+
+#define GRADESIGNED 10
+#define GRADEEXECUTE 5
 
 class Form {
 
 public:
 
-	Form(std::string const name, bool signd);
+	Form( std::string const name, int const gs, int const ge );
+
+	void	beSigned( Bureaucrat const &rhs );
+
+//	ACCESSORS
+
+	std::string const	getName( void ) const;
+	bool				getSigned( void ) const;
+	int					getGradeSigned( void ) const;
+	int 				getGradeExecute( void ) const;
+
+//	EXCEPTIONS
 
 	class GradeTooHighException : public std::exception {
 	public:
@@ -35,12 +50,19 @@ public:
 		}	
 	};
 
+	class WrongGradeInfo : public std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("\033[38;5;124mWrong entry grade\033[0m\n");
+		}	
+	};
+
 // CANONICAL FORM
 
-	Form( void ) : _gradeSigned(5), _gradeExecute(1) {};
+	Form( void );
 	Form &operator=( Form const &rhs );
 	Form( Form const &src );
-	~Form( void ) {};
+	~Form( void );
 
 private:
 
@@ -50,5 +72,7 @@ private:
 	int const			_gradeExecute;
 
 };
+
+std::ostream &operator<<( std::ostream &o, Form const &rhs );
 
 #endif

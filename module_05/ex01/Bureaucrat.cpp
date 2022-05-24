@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:06:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/23 13:51:17 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:57:51 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,24 @@
 
 Bureaucrat::Bureaucrat( std::string newName, int startingGrade ) : _name(newName), _grade(startingGrade) {}
 
-std::string	Bureaucrat::getName( void ) const { return this->_name; }
-int	Bureaucrat::getGrade( void ) const { return this->_grade; }
+std::string const	Bureaucrat::getName( void ) const {
+	
+	return this->_name;
+	
+}
+
+int	Bureaucrat::getGrade( void ) const {
+	
+	return this->_grade;
+
+}
 
 void	Bureaucrat::incrementGrade( int addGrade ) {
 	
 	std::cout << "Starting incrementation of " << addGrade << "..." << std::endl;
-	
+
+	if (addGrade <= 0)
+		throw Bureaucrat::GradeError();
 	if (this->_grade - addGrade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade -= addGrade;
@@ -37,6 +48,8 @@ void	Bureaucrat::decrementGrade( int delGrade ) {
 
 	std::cout << "Starting decrementation of " << delGrade << "..." << std::endl;
 
+	if (delGrade <= 0)
+		throw Bureaucrat::GradeError();
 	if (this->_grade + delGrade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade += delGrade;
@@ -49,15 +62,25 @@ void	Bureaucrat::decrementGrade( int delGrade ) {
 
 }
 
+void	Bureaucrat::signForm( Form const &rhs ) {
+
+	if (rhs.getGradeSigned() == 1)
+		std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
+	else
+		std::cout << this->getName() << " couldn't sign " << rhs.getName() << " because the form isn't signed." << std::endl;
+
+}
+
 /*
 **	CANONICAL FORM
 */
 
-Bureaucrat::Bureaucrat( void ) {}
+Bureaucrat::Bureaucrat( void ) : _name(""), _grade(0) {}
 
 Bureaucrat &Bureaucrat::operator=( Bureaucrat const &rhs ) {
 	
-	if (&rhs != this) {}
+	if (&rhs != this)
+		this->_grade = rhs.getGrade();
 
 	return *this;
 	
