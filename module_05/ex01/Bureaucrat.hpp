@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:14:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 12:54:20 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:04:52 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ public:
 
 	Bureaucrat( std::string, int);
 
-	std::string const	getName( void ) const;
-	int					getGrade( void ) const;
-
 	void				incrementGrade( int addGrade );
 	void				decrementGrade( int delGrade );
 
-	void				signForm( Form const &rhs );
+	void				signForm( Form &rhs );
+
+//	ACCESSORS
+
+	std::string const	getName( void ) const;
+	int					getGrade( void ) const;
 
 //	EXCEPTIONS
 

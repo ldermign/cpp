@@ -6,11 +6,12 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:10:20 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 12:52:02 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:56:08 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form( std::string const name, int const gs, int const ge ) 
 	: _name(name), _signed(0), _gradeSigned(gs), _gradeExecute(ge) {

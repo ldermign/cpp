@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:10:41 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 12:53:15 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:56:15 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define FORM_HPP
 
 #include <iostream>
-#include "Bureaucrat.hpp"
+class Bureaucrat;
+
 
 #define GRADESIGNED 10
 #define GRADEEXECUTE 5
@@ -25,7 +26,7 @@ public:
 
 	Form( std::string const name, int const gs, int const ge );
 
-	void	beSigned( Bureaucrat const &rhs );
+	void				beSigned( Bureaucrat const &rhs );
 
 //	ACCESSORS
 

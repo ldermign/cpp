@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:06:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 12:57:51 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:59:24 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,15 @@ void	Bureaucrat::decrementGrade( int delGrade ) {
 
 }
 
-void	Bureaucrat::signForm( Form const &rhs ) {
+void Bureaucrat::signForm( Form &rhs ) {
 
-	if (rhs.getGradeSigned() == 1)
-		std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
-	else
-		std::cout << this->getName() << " couldn't sign " << rhs.getName() << " because the form isn't signed." << std::endl;
+	try {
+		rhs.beSigned(*this);
+	}
+	catch (const std::exception &e) {
+		std::cerr << this->getName() << " couldn't sign " << rhs.getName() << " because " << e.what() << std::endl;
+	}
+	std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
 
 }
 
