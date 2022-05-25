@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/24 14:20:38 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/25 13:34:33 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	a.out
 
-SRCS	=	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS	=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 

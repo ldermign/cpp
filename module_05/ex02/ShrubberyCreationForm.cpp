@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:16:17 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 16:03:21 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:51:45 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,37 @@
 #include <iostream>
 #include "ShrubberyCreationForm.hpp"
 
-/*
-ShrubberyCreationForm (formulaire de création d’arbustes) :
-Échelons requis : signature 145, exécution 137
-Créé un fichier <target>_shrubbery dans le répertoire courant, et écrit des arbres
-ASCII à l’intérieur.
-*/
-
 ShrubberyCreationForm::ShrubberyCreationForm( std::string const targ )
-	: AForm("ShrubberyCreationForm", 145, 137), _target(targ) {
+	: AForm("ShrubberyCreationForm", 145, 137), _target(targ) {}
+
+void	ShrubberyCreationForm::doIt( void ) {
 
 	std::fstream tmp;
-	std::string	new_file = targ + "_shrubbery";
+	std::string	ret = this->getTarget() + "_shrubbery";
 
+	const char *new_file = ret.c_str();
 	tmp.open(new_file, std::ios::out);
 	if (tmp.fail()) {
         throw AForm::BadFile();
     }
+
+	tmp << std::endl;
+	tmp << "     *         ,@@@@@@@,     " << std::endl;
+	tmp << "       ,,,.   ,@@@@@@/@@,  .oo8888o.    *" << std::endl;
+	tmp << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
+	tmp << "   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'" << std::endl;
+	tmp << "   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'" << std::endl;
+	tmp << "   %&&%/ %&%%&&@@\\ V /@@' `88\\8 `/88'" << std::endl;
+	tmp << "   `&%\\ ` /%&'    |.|        \\ '|8'" << std::endl;
+	tmp << "       |o|        | |    *    | |" << std::endl;
+	tmp << " *     |.|        | |         | |" << std::endl;
+	tmp << "    \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
+	tmp << std::endl;
 	
-	tmp << "	           ,@@@@@@@,";
-	tmp << "       ,,,.   ,@@@@@@/@@,  .oo8888o.";
-	tmp << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\88/8o";
-	tmp << "   ,%&\%&&%&&%,@@@\@@@/@@@88\88888/88'";
-	tmp << "   %&&%&%&/%&&%@@\@@/ /@@@88888\88888'";
-	tmp << "   %&&%/ %&%%&&@@\ V /@@' `88\8 `/88'";
-	tmp << "   `&%\ ` /%&'    |.|        \ '|8'";
-	tmp << "       |o|        | |         | |";
-	tmp << "       |.|        | |         | |";
-	tmp << "    \\/ ._\//_/__/  ,\_//__\\/.  \_//__/_";
+	std::cout << "Check the file " << new_file << " !" << std::endl;
 
 	tmp.close();
+
 }
 
 std::string const	ShrubberyCreationForm::getTarget( void ) const {
@@ -61,7 +62,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( void )
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=( ShrubberyCreationForm const &rhs ) {
 
-	if (&rhs != this)
+	if (&rhs != this) {}
 		// this->_signed = rhs.getSigned();
 	
 	return *this;

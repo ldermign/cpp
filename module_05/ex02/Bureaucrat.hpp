@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:14:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 14:51:40 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:28:02 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat {
 
@@ -26,6 +26,10 @@ public:
 	void				decrementGrade( int delGrade );
 
 	void				signForm( AForm &rhs );
+
+	void				executeForm( AForm const &form );
+
+	
 
 //	ACCESSORS
 

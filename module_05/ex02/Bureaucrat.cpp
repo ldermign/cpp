@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:06:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 14:53:21 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:12:28 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,28 @@ void Bureaucrat::signForm( AForm &rhs ) {
 
 	try {
 		rhs.beSigned(*this);
+		std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
 	}
 	catch (const std::exception &e) {
 		std::cerr << this->getName() << " couldn't sign " << rhs.getName() << " because " << e.what() << std::endl;
 	}
-	std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
+	
+}
+
+void	Bureaucrat::executeForm( AForm const &form ) {
+
+	if (this->getGrade() > form.getGradeExecute()) {
+		std::cout << this->getName() << " [" << this->getGrade()
+			<< "] could not execute " << form.getName()
+			<< " [" << form.getGradeExecute() 
+			<< "] because he doesn't have an appropriate grade " 
+			<< std::endl;
+		throw AForm::GradeTooLowException();
+	}
+	
+	const_cast<AForm&>(form).doIt();
+	
+	std::cout << this->getName() << " executed " << form.getName() << std::endl;
 
 }
 

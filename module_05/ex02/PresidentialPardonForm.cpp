@@ -6,23 +6,19 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:16:55 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 16:04:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:00:39 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-/*
-PresidentialPardonForm (formulaire de pardon présidentiel) :
-Échelons requis : signature 25, exécution 5
-Informe que la <target> a été pardonnée par Zaphod Beeblebrox.
-*/
-
 PresidentialPardonForm::PresidentialPardonForm( std::string const targ )
-	: AForm("PresidentialPardonForm", 25, 5), _target(targ) {
+	: AForm("PresidentialPardonForm", 25, 5), _target(targ) {}
+
+void	PresidentialPardonForm::doIt( void ) {
 
 	std::cout << this->_target << " has been forgiven by Zaphod Beeblebrox" << std::endl;
-
+	
 }
 
 std::string const	PresidentialPardonForm::getTarget( void ) const {
@@ -40,7 +36,7 @@ PresidentialPardonForm::PresidentialPardonForm( void )
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=( PresidentialPardonForm const &rhs ) {
 
-	if (&rhs != this)
+	if (&rhs != this) {}
 		// this->_signed = rhs.getSigned();
 	
 	return *this;

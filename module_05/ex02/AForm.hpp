@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:10:41 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 16:05:35 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:24:52 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include <iostream>
 class Bureaucrat;
@@ -25,9 +25,11 @@ public:
 
 	AForm( std::string const name, int const gs, int const ge );
 
-	virtual void				beSigned( Bureaucrat const &rhs ) = 0;
+	void				beSigned( Bureaucrat const &rhs );
 
-	void	execute( Bureaucrat const &executor ) const;
+	void				execute( Bureaucrat const &executor ) const;
+
+	virtual void		doIt( void ) = 0;
 
 //	ACCESSORS
 
@@ -63,6 +65,20 @@ public:
 	public:
 		virtual const char	*what( void ) const throw() {
 			return ("\033[38;5;124mWrong entry grade\033[0m\n");
+		}	
+	};
+
+	class FormNotSigned : public std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("\033[38;5;124mCould not execute: Form not signed\033[0m\n");
+		}	
+	};
+
+	class GradeTooLowExecute : public std::exception {
+	public:
+		virtual const char	*what( void ) const throw() {
+			return ("\033[38;5;124mCould not execute: grade too low\033[0m\n");
 		}	
 	};
 

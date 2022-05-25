@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:10:20 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 16:06:32 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 16:10:26 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 AForm::AForm( std::string const name, int const gs, int const ge ) 
@@ -25,16 +25,20 @@ void	AForm::beSigned( Bureaucrat const &rhs ) {
 	
 	if (rhs.getGrade() > this->getGradeSigned())
 		throw AForm::GradeTooLowException();
-	this->_signed = 1;
+	else
+		this->_signed = 1;
+
 }
 
 void	AForm::execute( Bureaucrat const &executor ) const {
-/*
-Maintenant, ajoutez la fonction membre execute(Bureaucrat const & executor)
-const à la classe de base et implémentez une fonction pour exécuter l’action du formulaire
-des classes dérivées. 
-*/
-	
+
+	if (this->getSigned() == 0)
+		throw AForm::FormNotSigned();
+	if (executor.getGrade() > this->getGradeExecute())
+		throw AForm::GradeTooLowExecute();
+
+	const_cast<Bureaucrat&>(executor).executeForm(*this);
+
 }
 
 /*

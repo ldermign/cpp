@@ -6,25 +6,23 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:16:40 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 16:02:48 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:00:35 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include "RobotomyRequestForm.hpp"
 
-/*
- RobotomyRequestForm (formulaire de demande de robotomie) :
-Échelons requis : signature 72, exécution 45
-Fait des bruits de perceuse. Ensuite, informe que la <target> a été robotomisée
-avec succès 50% du temps. Dans le cas contraire, informe que l’opération a échoué.
-*/
-
 RobotomyRequestForm::RobotomyRequestForm( std::string const targ )
-	: AForm("RobotomyRequestForm", 75, 45), _target(targ) {
+	: AForm("RobotomyRequestForm", 75, 45), _target(targ) {}
 
+void	RobotomyRequestForm::doIt( void ) {
+	
 	std::cout << "*Drill noises*" << std::endl;
 	std::cout << "BbbbBzZZZZZzzzzzzzzzz" << std::endl;
 	std::cout << "RRRRRRRRRRRrrrrrrbbbbbbrrrZZZZZzzzzZzzzzz" << std::endl;
+	
+	srand(time(NULL));
 	
 	if (rand() % 2 == 0)
 		std::cout << this->getTarget() << " has been robotomised successfully" << std::endl;
@@ -48,7 +46,7 @@ RobotomyRequestForm::RobotomyRequestForm( void )
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const &rhs ) {
 
-	if (&rhs != this)
+	if (&rhs != this) {}
 		// this->_signed = rhs.getSigned();
 	
 	return *this;
