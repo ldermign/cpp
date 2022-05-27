@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 09:54:39 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/27 18:12:35 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/27 19:11:47 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ AForm	*Intern::makeForm( std::string nameForm, std::string target ) {
 				break ;
 			i++;
 		}
-		if (i == 4 || nameForm == "")
+		if (i == 4 || nameForm == "") {
+			for (int j = 0 ; j < 3 ; j++)
+				delete thisOne[j];
 			throw Intern::FormNotFound();
+		}
 	}
 	catch (const std::exception &e) {
 		std::cerr << e.what() << nameForm << "\033[0m\n";
