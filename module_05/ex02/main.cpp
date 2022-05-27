@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:52:42 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/25 16:12:23 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/27 09:51:15 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,35 @@ int	main( void ) {
 		std::cout << std::endl << "--------------- Not Signed ---------------" << std::endl;
 
 		Bureaucrat				notGoodEnough("Mr. Proud", 140);
+		PresidentialPardonForm	ZaphodPresident("Slartibartfast");
+		
+		try {
+			ZaphodPresident.execute(notGoodEnough);
+		}
+		catch (const std::exception &e) {
+			std::cerr << e.what() << '\n';
+		}
+	}
+
+	{
+		std::cout << std::endl << "--------------- Not High Enough To Execute ---------------" << std::endl;
+
+		Bureaucrat				notGoodEnough("Mr. Proud", 25);
+		PresidentialPardonForm	ZaphodPresident("Slartibartfast");
+		
+		try {
+			notGoodEnough.signForm(ZaphodPresident);
+			ZaphodPresident.execute(notGoodEnough);
+		}
+		catch (const std::exception &e) {
+			std::cerr << e.what() << '\n';
+		}
+	}
+	
+	{
+		std::cout << std::endl << "--------------- Not Signed And Not High Enough To Execute ---------------" << std::endl;
+
+		Bureaucrat				notGoodEnough("Mr. Proud", 25);
 		PresidentialPardonForm	ZaphodPresident("Slartibartfast");
 		
 		try {
