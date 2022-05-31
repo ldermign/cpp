@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/30 15:29:28 by ldermign         ###   ########.fr        #
+#    Updated: 2022/05/31 10:46:33 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	convert
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp Conversion.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
@@ -39,3 +39,4 @@ fclean:		clean
 re:			fclean all
 
 .PHONY: 	all clean fclean re
+
