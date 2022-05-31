@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:45:29 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/31 11:59:32 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:32:44 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,21 @@ class Conversion {
 
 public:
 
-	Conversion( char const *str );
-
 	void	getConv( char const *str );
 
-	void	convertAlpha( char const c );
-	void	convertInt( char const *str );
+	// void	convertInt( char const *str );
+	// void	convertChar( char const c );
+	// void	converDouble( char const *str );
+	// void	convertFloat( char const *str );
+
+//	ACCESSORS
+
+	int		getInt( void ) const;
+	char	getChar( void ) const;
+	double	getDouble( void ) const;
+	float	getFloat( void ) const;
+	char	getWhichConv( void ) const;
+
 
 //	CANONICAL FORM
 
@@ -33,12 +42,12 @@ public:
 
 private:
 
-	int		_int;
-	char	_char;
-	double	_double;
-	float	_float;
+	int			_int;
+	char		_char;
+	double		_double;
+	float		_float;
 
-	char	_whichConv;
+	char		_whichConv;
 
 };
 

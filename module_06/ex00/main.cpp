@@ -6,22 +6,32 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 15:27:47 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/31 11:59:45 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:32:29 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Conversion.hpp"
 
+// void	print( Conversion toConv ) { (void)toConv;
+
+
+// }
+
 int main( int ac, char **av ) {
+
+	Conversion toConv;
 
 	if (ac != 2) {
 		std::cout << "Error argument." << std::endl;
 		return 0;
 	}
 	else {
-		Conversion toConv(av[1]);
+		toConv.getConv(av[1]);
+		std::cout << toConv.getWhichConv() << std::endl;
+		// print(toConv);
 	}
-	return ;
+	return 0;
 }
 
 /*
