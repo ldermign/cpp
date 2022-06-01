@@ -6,7 +6,7 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/05/31 10:46:33 by ldermign         ###   ########.fr        #
+#    Updated: 2022/06/01 14:21:53 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ SRCS	=	main.cpp Conversion.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
+DEPS	=	${SRCS:.cpp=.d}
+
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
- 
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+
 RM		=	rm -rf
 
 all:		${NAME}
@@ -27,11 +29,13 @@ all:		${NAME}
 ${NAME}:	${OBJS}
 			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
-.cpp.o:
-			${CC} ${CFLAGS} -c $< -o ${<:cpp=o}
+-include	${DEPS}
+
+%.o:%.cpp
+			${CC} -MMD -MP -o $@ -c $< ${CFLAGS}
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${DEPS}
 
 fclean:		clean
 			${RM} ${NAME}
