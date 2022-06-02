@@ -6,14 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 10:58:16 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 15:16:01 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:34:25 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 class Cat : public AAnimal {

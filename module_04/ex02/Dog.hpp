@@ -6,14 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:01:31 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 15:15:36 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:34:32 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
 class Dog : public AAnimal {
