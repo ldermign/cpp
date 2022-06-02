@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:14:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/23 14:17:18 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:41:56 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,11 @@ public:
 
 	Bureaucrat( std::string, int);
 
-	std::string			getName( void ) const;
+	std::string const	getName( void ) const;
 	int					getGrade( void ) const;
 
 	void				incrementGrade( int addGrade );
 	void				decrementGrade( int delGrade );
-
-
-	class Exception : std::exception {
-	public:
-		virtual const char	*what( void ) const throw() {
-			return ("is too low");
-		};	// ; ou pas, ca fonctionne ???
-	};
 
 	class GradeTooHighException : public std::exception {
 	public:

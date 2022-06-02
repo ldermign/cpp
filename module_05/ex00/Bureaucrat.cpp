@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:06:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/23 14:18:45 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:45:05 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 
 Bureaucrat::Bureaucrat( std::string newName, int startingGrade ) : _name(newName), _grade(startingGrade) {}
 
-std::string	Bureaucrat::getName( void ) const { return this->_name; }
-int	Bureaucrat::getGrade( void ) const { return this->_grade; }
+std::string const	Bureaucrat::getName( void ) const {
+
+	return this->_name;
+
+}
+
+int	Bureaucrat::getGrade( void ) const {
+	
+	return this->_grade;
+	
+}
 
 void	Bureaucrat::incrementGrade( int addGrade ) {
 	
@@ -57,11 +66,16 @@ void	Bureaucrat::decrementGrade( int delGrade ) {
 **	CANONICAL FORM
 */
 
-Bureaucrat::Bureaucrat( void ) {}
+Bureaucrat::Bureaucrat( void ) : _name(""), _grade(0) {}
 
 Bureaucrat &Bureaucrat::operator=( Bureaucrat const &rhs ) {
 	
-	if (&rhs != this) {}
+	if (&rhs != this) {
+		
+		// this->_name = rhs.getName(); -> changement impossible car const ?
+		this->_grade = rhs.getGrade();
+
+	}
 
 	return *this;
 	

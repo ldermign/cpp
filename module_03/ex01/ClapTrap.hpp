@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:31:02 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/13 14:44:34 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 10:59:14 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ public:
 	ClapTrap( std::string name, int hp, int ep, int ad );
 	ClapTrap( std::string name );
 
-	ClapTrap( void );								//	Constructeur par défaut
-	ClapTrap	&operator=( ClapTrap const & rhs );//	Opérateur d’affectation
-	ClapTrap( ClapTrap const & src );				//	Constructeur de recopie
-	~ClapTrap( void );								//	Destructeur
+//	CANONICAL FORM
+
+	ClapTrap( void );
+	ClapTrap	&operator=( ClapTrap const & rhs );
+	ClapTrap( ClapTrap const & src );
+	virtual ~ClapTrap( void );
 
 protected:
 

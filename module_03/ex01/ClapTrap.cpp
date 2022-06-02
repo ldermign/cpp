@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:32:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/13 14:44:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:10:06 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+
+	std::cout << "The ClapTrap soldier Anonymus has been created" << std::endl;
+	this->_name = "Anonymus";
 
 	return ;
 }

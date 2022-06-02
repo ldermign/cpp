@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:52:42 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 14:05:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:28:45 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,14 @@ int	main( void ) {
 		
 		try {
 			notGoodEnough.incrementGrade(50);
-			goodForm.beSigned(notGoodEnough);
+			notGoodEnough.signForm(goodForm);
 			std::cout << goodForm << std::endl;	//	not showing
 		}
 		catch (const std::exception &e) {
 			std::cout << goodForm << std::endl;
 			std::cerr << e.what() << "\n";
 		}
+		notGoodEnough.signForm(goodForm);	//	should try catch again
 	}
 
 	return 0;

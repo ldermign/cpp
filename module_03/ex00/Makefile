@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/06/02 10:32:00 by ldermign         ###   ########.fr        #
+#    Updated: 2022/06/02 11:10:35 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	a.out
+NAME	=	war
 
-SRCS	=	 main.cpp ClapTrap.cpp
+SRCS	=	main.cpp ClapTrap.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
