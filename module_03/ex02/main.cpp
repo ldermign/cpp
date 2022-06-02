@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:30:27 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/16 11:23:18 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:00:24 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main( void ) {
 	ScavTrap gaule("Gallic");
 	FragTrap rome("Roman");
 
-	std::cout << std::endl << GREEN"----------------------- Start war -----------------------------"NORM << std::endl;
+	std::cout << std::endl << "----------------------- Start war -----------------------------" << std::endl;
 
 	gaule.attack("Spartiate");
 	sparte.takeDamage(20);
@@ -43,12 +43,12 @@ int	main( void ) {
 	rome.attack("Gallic");
 	gaule.takeDamage(30);
 
-	std::cout << std::endl << GREEN"----------------------- Others --------------------------------"NORM << std::endl;
+	std::cout << std::endl << "----------------------- Others --------------------------------" << std::endl;
 
 	gaule.guardGate();
 	rome.highFivesGuys();
 
-	std::cout << std::endl << RED"----------------------- End of war ----------------------------"NORM << std::endl;
+	std::cout << std::endl << "----------------------- End of war ----------------------------" << std::endl;
 	std::cout << "In order : FragTrap(Roman) - ClapTrap(Roman) - ScavTrap(Gallic) - ClapTrap(Gallic) - ClapTrap(Spartiate)" << std::endl;
 	
 }

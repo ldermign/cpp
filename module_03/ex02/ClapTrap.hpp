@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:31:02 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/16 11:23:37 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:01:08 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	ClapTrap( void );
 	ClapTrap	&operator=( ClapTrap const & rhs );
 	ClapTrap( ClapTrap const & src );
-	~ClapTrap( void );
+	virtual ~ClapTrap( void );
 
 protected:
 
