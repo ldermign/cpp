@@ -6,13 +6,13 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/06/02 10:22:09 by ldermign         ###   ########.fr        #
+#    Updated: 2022/06/03 11:21:57 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	a.out
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp Data.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
