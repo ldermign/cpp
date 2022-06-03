@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 09:24:54 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/02 11:34:06 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:04:27 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class AAnimal {
 
 public:
 
-	virtual void	makeSound( void ) const;
+	virtual void	makeSound( void ) const = 0;
 	std::string		getType( void ) const;
 	AAnimal( std::string newType );
 

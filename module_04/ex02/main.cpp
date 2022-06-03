@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:26:32 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 15:17:58 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:06:23 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ int	main( void ) {
 	for (int k = 0 ; k < 10 ; k++)
 		delete Attila[k];
 
-	// to check if realy abstract, de-comment
+	// to check if really abstract, de-comment
 	// AAnimal *test = new AAnimal();
+	// AAnimal = test;
 
 	return 0;
 }
