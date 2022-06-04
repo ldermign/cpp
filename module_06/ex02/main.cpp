@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:58:46 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/03 15:44:13 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/04 05:47:15 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,14 @@ void	identify( Base *p ) {(void)p;
 
 void	identify( Base &p ) {(void)p;
 
+	try {
+		Child2 & d = dynamic_cast<Child2 &>(*b);
+		std::cout << "Conversion is ok" << std::endl;
+	}
+	catch (std::bad_cast &bc) {
+		std::cout << "Conversion is NOT ok" << std::endl;
+		return 0;
+	}
 	
 }
 
