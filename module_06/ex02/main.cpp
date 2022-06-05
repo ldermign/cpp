@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:58:46 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/04 05:47:15 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/05 21:23:01 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,10 @@
 #include "B.hpp"
 #include "C.hpp"
 
-/*
-
-void identify(Base* p);
-Elle affiche le véritable type de l’objet pointé par p : "A", "B" ou "C".
-
-void identify(Base& p);
-Elle affiche le véritable type de l’objet pointé par p : "A", "B" ou "C".
-Utiliser un pointeur dans cette fonction est interdit.
-
-Le fichier d’en-tête typeinfo est interdit.
-Écrivez un programme pour tester que tout fonctionne comme attendu.
-*/
-
 Base	*generate( void ) {
 
-	int		alea = rand() % 2;
+	int		alea = std::rand() % 3;
 	Base	*newBaseClass;
-	std::cout << alea << std::endl;
 
 	switch (alea) {
 		case 0:
@@ -54,27 +40,65 @@ Base	*generate( void ) {
 	return newBaseClass;
 }
 
-void	identify( Base *p ) {(void)p;
+void	identify( Base *p ) {
 
-	
+	A *a = dynamic_cast<A *>(p);
+	if (a != NULL) {
+		std::cout << "type is [A]" << std::endl;
+		return ;
+	}
+	B *b = dynamic_cast<B *>(p);
+	if (b != NULL) {
+		std::cout << "type is [B]" << std::endl;
+		return ;
+	}
+	C *c = dynamic_cast<C *>(p);
+	if (c != NULL) {
+		std::cout << "type is [C]" << std::endl;
+		return ;
+	}
+
 }
 
-void	identify( Base &p ) {(void)p;
+void	identify( Base &p ) {
 
 	try {
-		Child2 & d = dynamic_cast<Child2 &>(*b);
-		std::cout << "Conversion is ok" << std::endl;
+		A &a = dynamic_cast<A &>(p);
+		std::cout << "type is [A]" << std::endl;
+		(void)a;
 	}
-	catch (std::bad_cast &bc) {
-		std::cout << "Conversion is NOT ok" << std::endl;
-		return 0;
+	catch (std::bad_cast &bc) {}
+	try {
+		B &b = dynamic_cast<B &>(p);
+		std::cout << "type is [B]" << std::endl;
+		(void)b;
 	}
+	catch (std::bad_cast &bc) {}
+	try {
+		C &c = dynamic_cast<C &>(p);
+		std::cout << "type is [C]" << std::endl;
+		(void)c;
+	}
+	catch (std::bad_cast &bc) {}
 	
 }
 
 int main( void ) {
 
+	Base	*toIdentify;
 
+	std::srand(std::time(NULL));
+
+	for (int i = 0 ; i < 10 ; i++) {
+
+		toIdentify = generate();
+		std::cout << "Identification by pointer : ";
+		identify(toIdentify);
+		std::cout << "Identification by reference : ";
+		identify(*toIdentify);
+		std::cout << std::endl;
+		delete toIdentify;
+	}
 
 	return 0;
 }
