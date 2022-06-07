@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:16:17 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/25 15:51:45 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:28:47 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ ShrubberyCreationForm::ShrubberyCreationForm( void )
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=( ShrubberyCreationForm const &rhs ) {
 
-	if (&rhs != this) {}
-		// this->_signed = rhs.getSigned();
+	if (&rhs != this) {
+		std::string	*ptr = (std::string*)(&this->_target);
+		*ptr = rhs._target;
+	}
 	
 	return *this;
 

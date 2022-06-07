@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:16:40 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/25 14:00:35 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:28:37 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ RobotomyRequestForm::RobotomyRequestForm( void )
 
 RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const &rhs ) {
 
-	if (&rhs != this) {}
-		// this->_signed = rhs.getSigned();
+	if (&rhs != this) {
+		std::string	*ptr = (std::string*)(&this->_target);
+		*ptr = rhs._target;
+	}
 	
 	return *this;
 
