@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 09:54:39 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/27 19:11:47 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:36:11 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ Intern::Intern( void ) {}
 
 Intern &Intern::operator=( Intern const &rhs ) {
 
-	if (&rhs != this) {}
-	
+	(void)rhs;
 	return *this;
 
 }
