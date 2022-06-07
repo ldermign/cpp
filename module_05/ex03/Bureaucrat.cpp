@@ -6,13 +6,19 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:06:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/25 16:12:28 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:20:26 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( std::string newName, int startingGrade ) : _name(newName), _grade(startingGrade) {}
+Bureaucrat::Bureaucrat( std::string newName, int startingGrade ) : _name(newName), _grade(startingGrade) {
+
+	if (startingGrade <= 0)
+		throw Bureaucrat::GradeTooHighException();
+	if (startingGrade > 150)
+		throw Bureaucrat::GradeTooLowException();
+}
 
 std::string const	Bureaucrat::getName( void ) const {
 	
@@ -95,7 +101,7 @@ void	Bureaucrat::executeForm( AForm const &form ) {
 **	CANONICAL FORM
 */
 
-Bureaucrat::Bureaucrat( void ) : _name(""), _grade(0) {}
+Bureaucrat::Bureaucrat( void ) : _name("Mr. No-Name"), _grade(150) {}
 
 Bureaucrat &Bureaucrat::operator=( Bureaucrat const &rhs ) {
 	
