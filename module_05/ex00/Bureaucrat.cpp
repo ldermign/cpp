@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:06:05 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/24 10:45:05 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:05:59 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,8 @@ Bureaucrat::Bureaucrat( void ) : _name(""), _grade(0) {}
 
 Bureaucrat &Bureaucrat::operator=( Bureaucrat const &rhs ) {
 	
-	if (&rhs != this) {
-		
-		// this->_name = rhs.getName(); -> changement impossible car const ?
+	if (&rhs != this)
 		this->_grade = rhs.getGrade();
-
-	}
 
 	return *this;
 	
