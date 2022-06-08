@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:28:10 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/08 11:53:29 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/08 14:09:51 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ public:
 
 	Array( void ) : _size(0), _array(new T[0]) {}
 	Array &operator=( Array const &rhs ) {
+		this->_size = rhs._size;
+		this->_array = new T[this->_size];
 		if (&rhs != this)
-			for (int i = 0 ; i < this->_n ; i++)
+			for (unsigned int i = 0 ; i < this->_size ; i++)
 				this->_array[i] = rhs._array[i]; 
 		return *this;
 	}

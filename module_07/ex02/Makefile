@@ -6,7 +6,7 @@
 #    By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 10:07:03 by ldermign          #+#    #+#              #
-#    Updated: 2022/06/05 20:31:52 by ldermign         ###   ########.fr        #
+#    Updated: 2022/06/08 14:06:38 by ldermign         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ DEPS	=	${SRCS:.cpp=.d}
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
 
 RM		=	rm -rf
 
