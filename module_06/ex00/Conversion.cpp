@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 10:45:04 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/01 16:06:47 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:46:32 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,18 @@ void	Conversion::convertToChar( char const c ) {
 	}
 	else if (c == 'D') {
 		int tmp = static_cast<int>(this->getDouble());
-		if (std::isprint(tmp))
+		if (tmp > 400 || tmp < 0)
+			this->_impChar = "Non displayable";
+		else if (std::isprint(tmp))
 			this->_char = static_cast<char>(tmp);
 		else
 			this->_impChar = "Non displayable";
 	}
 	else if (c == 'F') {
 		int tmp = static_cast<int>(this->getFloat());
-		if (std::isprint(tmp))
+		if (tmp > 400 || tmp < 0)
+			this->_impChar = "Non displayable";
+		else if (std::isprint(tmp))
 			this->_char = static_cast<char>(tmp);
 		else
 			this->_impChar = "Non displayable";
@@ -81,11 +85,8 @@ void	Conversion::convertToInt( char const c ) {
 			this->_impInt = "overflow";
 		else if (this->getFloat() < INT32_MIN)
 			this->_impInt = "underflow";
-		else {
-			
+		else
 			this->_int = static_cast<int>(this->getFloat());
-			// std::cout << this->_int << std::endl;
-		}
 	}
 
 }
@@ -102,8 +103,15 @@ void	Conversion::doConv( void ) {
 static bool	isFloat( std::string const &str ) {
 
 	std::string::const_iterator it = str.begin();
+	std::string::const_iterator itt = str.begin();
 	bool decimalPoint = false;
 	int minSize = 0;
+
+	while (itt != str.end() && std::isdigit(*itt)) {
+		++itt;
+	}
+	if (*itt == 'f')
+		return 1;
 
 	if (str.size() > 0 && (str[0] == '-' || str[0] == '+')) {
 		it++;

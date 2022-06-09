@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:00:57 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 10:09:36 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:25:21 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,35 @@ void	Dog::makeSound( void ) const {
 Dog::Dog( std::string newType ) {
 
 	type = newType;
+}
+
+/*
+**	CANONICAL FORM
+*/
+
+Dog::Dog( void ) : Animal("Dog") {
+
+	std::cout << "One more Dog !" << std::endl;
+
+}
+
+Dog	&Dog::operator=( Dog const & rhs ) {
+
+	if (&rhs != this)
+		this->type = rhs.getType();
+
+	return *this;
+
+}
+
+Dog::Dog( Dog const & src ) {
+
+	*this = src;
+
+}
+
+Dog::~Dog( void ) {
+
+	std::cout << "One of the Dogs is gone" << std::endl;
+
 }

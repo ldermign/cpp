@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 11:01:31 by ldermign          #+#    #+#             */
-/*   Updated: 2022/05/19 10:07:45 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:24:44 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,12 @@ public:
 	virtual void	makeSound( void ) const;
 	Dog( std::string newType );
 
-// Canonical form
+//	CANONICAL FORM
 
-	Dog( void ) : Animal("Dog") {
-		std::cout << "One more Dog !" << std::endl;
-	};
-	Dog	&operator=( Dog const & rhs ) {
-		if (&rhs != this)
-			this->type = rhs.getType();
-		return *this;
-	};
-	Dog( Dog const & src ) {
-		*this = src;
-	};
-	virtual	~Dog( void ) {
-		std::cout << "One of the Dogs is gone" << std::endl;
-	};
+	Dog( void );
+	Dog	&operator=( Dog const & rhs );
+	Dog( Dog const & src );
+	virtual	~Dog( void );
 
 };
 

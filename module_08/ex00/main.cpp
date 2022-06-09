@@ -6,11 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:06:20 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/08 16:08:43 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:20:33 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
+#include <iterator>
 
 int main( void ) {
 
@@ -25,6 +28,7 @@ second un nombre entier.
 
 Partant du principe que T est un container d’entiers, cette fonction doit 
 trouver la première occurrence du second paramètre dans le premier paramètre.
+
 Si aucune occurrence n’a été trouvée, vous pouvez soit jeter une exception, 
 soit retourner une valeur d’erreur de votre choix. Si vous avez besoin 
 d’inspiration, jetez un oeil au comportement des containers standards.
