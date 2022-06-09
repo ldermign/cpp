@@ -6,12 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:58:46 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/05 21:23:01 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:55:49 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
+#include <typeinfo>
 #include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
