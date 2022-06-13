@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:25:09 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/13 09:20:35 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:00:58 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,18 @@ public:
 
 	Span( unsigned int n );
 
-	void	addNumber(  unsigned int add  );
-	void	shortestSpan( void );
-	void	longestSpan( void );
+	void			addNumber( unsigned int add );
+	unsigned int	shortestSpan( void );
+	unsigned int	longestSpan( void );
+
+	void			addRange( void );
 
 //	EXCEPTIONS
-
-	class AddImpossible : public std::exception {
-	public:
-		virtual const char	*what( void ) const throw() {
-			return ("\033[38;5;124mCouldn't add number in Span\033[0m\n");
-		}	
-	};
 
 	class NumberNotFound : public std::exception {
 	public:
 		virtual const char	*what( void ) const throw() {
-			return ("\033[38;5;124mNo numbers were found in Span\033[0m\n");
+			return ("\033[38;5;124mNot enough numbers in Span\033[0m\n");
 		}	
 	};
 
@@ -70,6 +65,5 @@ private:
 	std::vector<int>	_ret;
 
 };
-
 
 #endif
