@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:25:09 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/13 16:00:58 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:54:26 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ public:
 	unsigned int	shortestSpan( void );
 	unsigned int	longestSpan( void );
 
-	void			addRange( void );
+	void			addRange( std::vector< int >::iterator it1, std::vector< int >::iterator it2 );
+
+	int	operator[]( unsigned int x ) {
+		return this->_ret[x];
+	}
 
 //	EXCEPTIONS
 
@@ -62,7 +66,7 @@ public:
 private:
 	
 	unsigned int		_N;
-	std::vector<int>	_ret;
+	std::vector< int >	_ret;
 
 };
 

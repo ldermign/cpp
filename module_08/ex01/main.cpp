@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:24:14 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/13 16:02:00 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:55:22 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include "Span.hpp"
 
 /*
-
-Ensuite, implémentez deux fonctions membres : shortestSpan() et longestSpan()
-Elles devront respectivement trouver la plus petite distance et la plus grande distance
-entre les nombres stockés, puis la retourner. S’il n’y a aucun nombre stocké, ou juste un,
-aucune distance ne peut être trouvée. Par conséquent, jetez une exception.
 
 Bien sûr, implémentez vos propres tests qui devront être bien plus complets que celui
 donné ci-dessous. Testez votre Span avec au moins 10 000 nombres. Vous pouvez tester
@@ -52,7 +47,20 @@ int	main( void ) {
 	std::cout << std::endl << "---------- Span of 20 000 ----------" << std::endl;
 //	MAX UNSIGNED INT = 4.294.967.295
 
-
+	{
+		std::vector< int >	max(10000, 42);
+		Span sp2 = Span(10005);
+		sp2.addNumber(123);
+		sp2.addNumber(2147483647);
+		sp2.addNumber(525252);
+		sp2.addNumber(1);
+		sp2.addNumber(111111);
+	
+		sp2.addRange(max.begin(), max.end());
+		
+		for (int i = 0 ; i < 15 ; i++)
+			std::cout << sp2[i] << std::endl;
+	}
 
 	std::cout << std::endl << "---------- Errors -----------" << std::endl << std::endl;
 

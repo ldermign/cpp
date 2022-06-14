@@ -6,13 +6,14 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:24:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/13 15:58:25 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:42:12 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
 #include <limits.h>
+#include <iterator>
 #include "Span.hpp"
 
 Span::Span( unsigned int n ) : _N(n), _ret(0) {}
@@ -93,8 +94,11 @@ unsigned int	Span::longestSpan( void ) {
 	return longest;
 }
 
-void	Span::addRange( void ) {
+void	Span::addRange( std::vector< int >::iterator it1, std::vector< int >::iterator it2 ) {
 	
+	if ((this->_ret.size() + std::distance(it1, it2)) > this->_N ) // verifier avec this->size()
+		throw Span::SpanFull();
+	this->_ret.insert(this->_ret.end(), it1, it2);
 }
 
 /*
