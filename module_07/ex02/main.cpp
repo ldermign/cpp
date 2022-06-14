@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:27:24 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/08 14:10:41 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:42:16 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 #include "Array.hpp"
 
 #define MAX_VAL 750
+
+class Awesome {
+	
+public:
+
+	Awesome( void ) : _n( rand() % 100 ) { return; }
+	int get( void ) const { return this->_n; }
+
+private:
+
+	int _n;
+
+};
 
 int main(int, char**) {
 	
@@ -58,7 +71,25 @@ int main(int, char**) {
 	for (int i = 0; i < MAX_VAL; i++)
 		numbers[i] = rand();
 
-	delete [] mirror;//
+	delete [] mirror;
+
+	{
+		Array< Awesome >	test(5);
+		try {
+			std::cout << test[3].get() << std::endl;
+			std::cout << test[1].get() << std::endl;			
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << '\n';
+		}
+	}
+
+	{
+		//	empty array
+		Array< int >	test;
+		std::cout << "Size of empty array = " << test.getSize() << std::endl;
+	}
+
 	
 	return 0;
 }

@@ -6,30 +6,30 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:33:16 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/08 13:57:56 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:20:24 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "iter.hpp"
 
-// class Awesome {
+class Awesome {
 	
-// public:
+public:
 
-// 	Awesome( void ) : _n( 42 ) { return; }
-// 	int get( void ) const { return this->_n; }
+	Awesome( void ) : _n( 42 ) { return; }
+	int get( void ) const { return this->_n; }
 
-// private:
+private:
 
-// 	int _n;
+	int _n;
 
-// };
+};
 
-// std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
-// template< typename T >
-// void print( T const & x ) { std::cout << x << std::endl; return; }
+template< typename T >
+void print( T const & x ) { std::cout << x << std::endl; return; }
 
 int main( void ) {
 
@@ -52,12 +52,14 @@ int main( void ) {
 		iter(test, 4, print);
 	}
 	
+	std::cout << "----------" << std::endl;
+	
 
-	// int tab[] = { 0, 1, 2, 3, 4 };
-	// Awesome tab2[5];
+	int tab[] = { 0, 1, 2, 3, 4 };
+	Awesome tab2[5];
 
-	// iter( tab, 5, print );
-	// iter( tab2, 5, print );
+	iter( tab, 5, print );
+	iter( tab2, 5, print );
 	
 	
 	return 0;

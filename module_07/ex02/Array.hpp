@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:28:10 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/09 14:23:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:31:34 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ private:
 	T				*_array;
 
 public:
+
+	unsigned int	getSize( void ) { return this->_size; }
 
 	unsigned int size( void ) const {
 		return this->_n;
