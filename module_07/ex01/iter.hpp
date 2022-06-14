@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:33:54 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/07 15:24:44 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:55:02 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	iter( T tabl[], int size, void (*f)(T &) ) {
 }
 
 template< typename U >
-void	print( U &toPrint ) {
+void	print( U &toPrint ) {	//	const ?
 
 	std::cout << toPrint << std::endl;
 }

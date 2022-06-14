@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 15:27:24 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/14 09:42:16 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 10:50:50 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int main(int, char**) {
 	{
 		//	empty array
 		Array< int >	test;
-		std::cout << "Size of empty array = " << test.getSize() << std::endl;
+		std::cout << "Size of empty array = " << test.size() << std::endl;
 	}
 
 	
