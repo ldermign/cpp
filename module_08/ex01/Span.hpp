@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:25:09 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/14 13:54:26 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:00:22 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ public:
 	Span( void );
 	Span	&operator=( Span const &rhs );
 	Span( Span const &src );
-	~Span( void );
+	virtual ~Span( void );
 
 private:
 	

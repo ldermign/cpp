@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 15:24:38 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/14 13:42:12 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/15 09:43:59 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ unsigned int	Span::shortestSpan( void ) {
 	unsigned long int	before;
 	unsigned long int	shortest = UINT_MAX;
 	bool				found = false;
-	std::vector<int>::const_iterator	it1 = _ret.begin();
-	std::vector<int>::const_iterator	it2 = _ret.end();
+	std::vector< int >::const_iterator	it1 = _ret.begin();
+	std::vector< int >::const_iterator	it2 = _ret.end();
 
 	while (it1 != it2) {
 
@@ -70,8 +70,8 @@ unsigned int	Span::longestSpan( void ) {
 	unsigned long int	ret;
 	unsigned long int	before;
 	bool				found = false;
-	std::vector<int>::const_iterator	it1 = _ret.begin();
-	std::vector<int>::const_iterator	it2 = _ret.end();
+	std::vector< int >::const_iterator	it1 = _ret.begin();
+	std::vector< int >::const_iterator	it2 = _ret.end();
 
 	while (it1 != it2) {
 		

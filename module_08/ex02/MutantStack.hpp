@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:59:03 by ldermign          #+#    #+#             */
-/*   Updated: 2022/06/14 15:08:47 by ldermign         ###   ########.fr       */
+/*   Updated: 2022/06/15 09:18:07 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,36 @@
 # define MUTANTSTACK_HPP
 
 #include <stack>
-
-/*
-empty	->	Test whether container is empty (public member function )
-size	->	Return size (public member function )
-top		->	Access next element (public member function )
-push	->	Insert element (public member function )
-emplace	->	Construct and insert element (public member function )	//	c++11
-pop		->	Remove top element (public member function )
-swap	->	Swap contents (public member function )	//	c++11
-*/
+#include <iterator>
 
 template< typename T >
 class MutantStack : public std::stack< T > {
 
-private:
-
 public:
-	
+
+	typedef typename std::stack< T >::container_type::iterator iterator;
+
+	iterator	begin( void ) {
+		return this->c.begin();
+	}
+	iterator	end( void ) {
+		return this->c.end();
+	}
 
 //	CANONICAL FORM
 
-	MutantStack( void );
-	MutantStack	&operator=( MutantStack const &rhs ) {
+	MutantStack( void ) {}
+	MutantStack< T > &operator=( const MutantStack< T > &rhs ) {
 		if (this == &rhs)
 			return *this;
-		
+		this->c = rhs.c;
 		return *this;
-	};
-	MutantStack( MutantStack const &src ) {
+	}
+	MutantStack( const MutantStack< T > &src ) {
 		*this = src;
-	};
-	virtual	~MutantStack( void );
+	}
+	virtual	~MutantStack( void ) {}
+
 };
 
 #endif
